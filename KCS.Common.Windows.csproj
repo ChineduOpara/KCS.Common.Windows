@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF5C0D7D-C4DF-4261-B5E2-80D342F3F18A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KCS.Common.Controls</RootNamespace>
+    <AssemblyName>KCS.Common.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>bin\Debug\KCS.Common.Controls.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComboBoxes\CountryComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KCSBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KCSBaseForm.designer.cs">
+      <DependentUpon>KCSBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buttons\Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Buttons\NonFocusableButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Buttons\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboBoxes\HistoryComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboBoxes\CultureComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridViews\DataGridViewColumnEx.cs" />
+    <Compile Include="DataGridViews\DataGridViewColumnGroup.cs" />
+    <Compile Include="DataGridViews\KCSDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other\ExtendedSplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListViews\ExtendedListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other\MenuRenderer.cs" />
+    <Compile Include="Panels\ButtonPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panels\CollapsiblePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboBoxes\ColorComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboBoxes\KCSComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Labels\ExtendedLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Other\AsyncProgressBar\AsynProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Other\AsyncProgressBar\AsynProgressBar.Designer.cs">
+      <DependentUpon>AsynProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other\AsyncProgressBar\AsyncProgressBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Other\ValuesTracker\ValuesTracker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListBoxes\KCSCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListBoxes\KCSListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panels\ExtendedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Other\SmoothProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RichTextBoxes\CSHTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBoxes\KCSTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBoxes\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBoxes\TransparentTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripItems\CheckBoxToolStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripItems\HistoryToolStripComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripItems\KCSToolStripComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripItems\KCSToolStripDropDownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripItems\NumericToolStripTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeViews\KCSTreeNode.cs" />
+    <Compile Include="TreeViews\KCSTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="KCSBaseForm.resx">
+      <DependentUpon>KCSBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViews\ExtendedListView.resx">
+      <DependentUpon>ExtendedListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ValuesTracker.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.Button.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.Checkbox.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.CheckedListBox.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.ComboBox.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.DateTimePicker.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.ListBox.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.ListView.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.MaskedTextBox.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.MonthCalendar.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.NumericUpDown.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.RadioButton.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.RichTextBox.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.TabControl.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.TextBox.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.Timer.bmp" />
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.TreeView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataGridViews\KCSDataGridView.resx">
+      <DependentUpon>KCSDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Other\AsyncProgressBar\AsynProgressBar.resx">
+      <DependentUpon>AsynProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.SplitContainer.bmp" />
+    <EmbeddedResource Include="RichTextBoxes\CSHTextBox.resx">
+      <DependentUpon>CSHTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowUp.png" />
+    <None Include="Resources\ArrowDown.png" />
+    <None Include="Resources\ArrowLeft.png" />
+    <None Include="Resources\ArrowRight.png" />
+    <Content Include="Resources\Expand1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ToolStrips\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KCS.Common.Shared\KCS.Common.Shared.csproj">
+      <Project>{B733DC70-1296-4CFB-98DF-4703D3727AB0}</Project>
+      <Name>KCS.Common.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2993 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KCS.Common.Shared</name>
+    </assembly>
+    <members>
+        <member name="M:KCS.Common.Shared.Countries.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.Countries.Instance">
+            <summary>
+            Static instance.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.UnitedStates.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.UnitedStates.Instance">
+            <summary>
+            Static instance.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.UnitedState">
+            <summary>
+            A single state.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Attributes.UrlAttribute">
+            <summary>
+            Associates a URL with a Type.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Attributes.UrlAttribute.#ctor(System.Uri)">
+            <summary>
+            Constructor with Uri object.
+            </summary>
+            <param name="uri">Uri object.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Attributes.UrlAttribute.#ctor(System.String)">
+            <summary>
+            Constructor with Url string.
+            </summary>
+            <param name="url">Url string.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Attributes.UrlAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Constructor with Url string and description.
+            </summary>
+            <param name="url">Url string.</param>
+            <param name="description">Url description.</param>
+        </member>
+        <member name="T:KCS.Common.Shared.DragDropObject`1">
+            <summary>
+            Represents data being drag-and-dropped. This class includes the source control, as well as other useful methods.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.DragDropObject`1.#ctor">
+            <summary>
+            Private constructor.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.DragDropObject`1.Initialize(System.Windows.Forms.Control,`0)">
+            <summary>
+            Alternate private constructor.
+            </summary>
+            <param name="source">Source control.</param>
+            <param name="data">Data being drag-dropped.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.DragDropObject`1.#ctor(System.Windows.Forms.Control,`0)">
+            <summary>
+            Public constructor, for use with ListViews.
+            </summary>
+            <param name="source">Source control.</param>
+            <param name="data">SelectedListViewItemCollection being drag-dropped.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.DragDropObject`1.GetDataPresent(System.Type)">
+            <summary>
+            Checks to see if the Data being drag-dropped is of a particular type.
+            </summary>
+            <param name="type">Type for which to check.</param>
+            <returns>TRUE if the embedded Data is of a particular type.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.DragDropObject`1.GetDataPresent(System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Returns TRUE if the Data is any of the given types.
+            </summary>
+            <param name="types"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.DragDropObject`1.GetObject">
+            <summary>
+            Gets the list of objects.
+            </summary>
+            <returns>List of objects.</returns>
+        </member>
+        <member name="P:KCS.Common.Shared.DragDropObject`1.Source">
+            <summary>
+            Contains a reference to the source control.
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.DragDropObject`1.Data">
+            <summary>
+            Contains a reference to the data being dragged.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.DateRange">
+            <summary>
+            DateTime.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.IRange`1">
+            <summary>
+            Interface for Generic range classes.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:KCS.Common.Shared.DateRange.Duration">
+            <summary>
+            Duration.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.GenericMessage">
+            <summary>
+            A generic message class.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.GenericMessageList.Remove(System.String)">
+            <summary>
+            Removes the first message matching the body and returns it to the caller.
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GenericMessageList.Dequeue">
+            <summary>
+            Removes the next message and returns it to the caller.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.CalendarEvent.#ctor(System.Int32)">
+            <summary>
+            Constructor accepts the ID as an int.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.Calendar.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Calendar.GetBytes">
+            <summary>
+            Gets the calendar as a MemoryStream.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KCS.Common.Shared.RijndaelSimple">
+            <summary>
+            This class uses a symmetric key algorithm (Rijndael/AES) to encrypt and 
+            decrypt data. As long as encryption and decryption routines use the same
+            parameters to generate the keys, the keys are guaranteed to be the same.
+            The class uses static functions with duplicate code to make it easier to
+            demonstrate encryption and decryption logic. In a real-life application, 
+            this may not be the most efficient way of handling encryption, so - as
+            soon as you feel comfortable with it - you may want to redesign this class.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.RijndaelSimple.Encrypt(System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            Encrypts specified plaintext using Rijndael symmetric key algorithm
+            and returns a base64-encoded result.
+            </summary>
+            <param name="plainText">
+            Plaintext value to be encrypted.
+            </param>
+            <param name="passPhrase">
+            Passphrase from which a pseudo-random password will be derived. The
+            derived password will be used to generate the encryption key.
+            Passphrase can be any string. In this example we assume that this
+            passphrase is an ASCII string.
+            </param>
+            <param name="saltValue">
+            Salt value used along with passphrase to generate password. Salt can
+            be any string. In this example we assume that salt is an ASCII string.
+            </param>
+            <param name="hashAlgorithm">
+            Hash algorithm used to generate password. Allowed values are: "MD5" and
+            "SHA1". SHA1 hashes are a bit slower, but more secure than MD5 hashes.
+            </param>
+            <param name="passwordIterations">
+            Number of iterations used to generate password. One or two iterations
+            should be enough.
+            </param>
+            <param name="initVector">
+            Initialization vector (or IV). This value is required to encrypt the
+            first block of plaintext data. For RijndaelManaged class IV must be 
+            exactly 16 ASCII characters long.
+            </param>
+            <param name="keySize">
+            Size of encryption key in bits. Allowed values are: 128, 192, and 256. 
+            Longer keys are more secure than shorter keys.
+            </param>
+            <returns>
+            Encrypted value formatted as a base64-encoded string.
+            </returns>
+        </member>
+        <member name="M:KCS.Common.Shared.RijndaelSimple.Decrypt(System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            Decrypts specified ciphertext using Rijndael symmetric key algorithm.
+            </summary>
+            <param name="cipherText">
+            Base64-formatted ciphertext value.
+            </param>
+            <param name="passPhrase">
+            Passphrase from which a pseudo-random password will be derived. The
+            derived password will be used to generate the encryption key.
+            Passphrase can be any string. In this example we assume that this
+            passphrase is an ASCII string.
+            </param>
+            <param name="saltValue">
+            Salt value used along with passphrase to generate password. Salt can
+            be any string. In this example we assume that salt is an ASCII string.
+            </param>
+            <param name="hashAlgorithm">
+            Hash algorithm used to generate password. Allowed values are: "MD5" and
+            "SHA1". SHA1 hashes are a bit slower, but more secure than MD5 hashes.
+            </param>
+            <param name="passwordIterations">
+            Number of iterations used to generate password. One or two iterations
+            should be enough.
+            </param>
+            <param name="initVector">
+            Initialization vector (or IV). This value is required to encrypt the
+            first block of plaintext data. For RijndaelManaged class IV must be
+            exactly 16 ASCII characters long.
+            </param>
+            <param name="keySize">
+            Size of encryption key in bits. Allowed values are: 128, 192, and 256.
+            Longer keys are more secure than shorter keys.
+            </param>
+            <returns>
+            Decrypted string value.
+            </returns>
+            <remarks>
+            Most of the logic in this function is similar to the Encrypt
+            logic. In order for decryption to work, all parameters of this function
+            - except cipherText value - must match the corresponding parameters of
+            the Encrypt function which was called to generate the
+            ciphertext.
+            </remarks>
+        </member>
+        <member name="T:KCS.Common.Shared.Enumerations">
+            <summary>
+            Contains all Enumerations for this project.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Enumerations.SortDirection">
+            <summary>
+            Generic sort direction.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Enumerations.HttpRequestMethod">
+            <summary>
+            HTTP request methods
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Enumerations.ExpandDirection">
+            <summary>
+            Expansion direction. First used for the CollapsiblePanel control.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Enumerations.ExpandDirection.Right">
+            <summary>
+            Panel contents expand from left to right, to the right of the expand/collapse button.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Enumerations.ExpandDirection.Left">
+            <summary>
+            Panel contents expand from right to left, to the left of the expand/collapse button.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Enumerations.ExpandDirection.Bottom">
+            <summary>
+            Panel contents expand from top to bottom, below the expand/collapse button.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Enumerations.ExpandDirection.Top">
+            <summary>
+            Panel contents expand from bottom to top, above the expand/collapse button.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Constants">
+            <summary>
+            Project constants.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Constants.WM_KEYDOWN">
+            <summary>
+            To Capture Ctrl F
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Constants.FormProperties">
+            <summary>
+            Form-specific property names.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Constants.FormProperties.Top">
+            <summary>
+            Top property name.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Constants.FormProperties.Left">
+            <summary>
+            Left property name.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Constants.FormProperties.Width">
+            <summary>
+            Width property name.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Constants.FormProperties.Height">
+            <summary>
+            Height property name.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.NumericEventArgs">
+            <summary>
+            Indicates success or failure.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.TimeStampEventArgs">
+            <summary>
+            Indicates success or failure.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.GenericEventArgs`1">
+            <summary>
+            This class is meant to be subclassed.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.GenericEventArgs`1.#ctor(`0)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="data">String data.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.GenericEventArgs`1.Data">
+            <summary>
+            The data (could be anything).
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.TimeStampEventArgs.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.TimeStampEventArgs.#ctor(System.DateTime)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.TimeStampEventArgs.#ctor(System.DateTime,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.TimeStampEventArgs.TimeStamp">
+            <summary>
+            Contains the TImeStamp
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.NumericEventArgs.#ctor(System.Decimal,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.NumericEventArgs.Value">
+            <summary>
+            Contains the numeric value.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.TimeSpanEventArgs">
+            <summary>
+            Indicates success or failure.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.TimeSpanEventArgs.#ctor(System.TimeSpan)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.TimeSpanEventArgs.#ctor(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.TimeSpanEventArgs.TimeSpan">
+            <summary>
+            Contains the TimeSpan
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.UrlEventArgs">
+            <summary>
+            Indicates success or failure.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.UrlEventArgs.#ctor(System.Uri)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.UrlEventArgs.#ctor(System.Uri,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.UrlEventArgs.Uri">
+            <summary>
+            Contains the Uri.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.EventLogMessageEventArgs.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.EventLogMessageEventArgs.#ctor(System.String,KCS.Common.Shared.Enumerations.MessageType)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.EventLogMessageEventArgs.EntryType">
+            <summary>
+            Contains the message timestamp.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.DataRowViewEventArgs">
+            <summary>
+            Contains an exception.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.DataRowViewEventArgs.#ctor(System.Data.DataRowView)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.DataRowViewEventArgs.DataRowView">
+            <summary>
+            Contains the DataTable.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.FindEventArgs">
+            <summary>
+            Search event args.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.FindEventArgs.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="data">Data to search for.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.FindEventArgs.Text">
+            <summary>
+            Contains the text to be located.
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.FindEventArgs.Reverse">
+            <summary>
+            Contains the Search Reversed flag.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.DataTableCellEventArgs">
+            <summary>
+            Contains the location of a cell in a DataTable.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.DataTableCellEventArgs.#ctor(System.Int32,System.Int32,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="rowIndex">Row Index.</param>
+            <param name="columnIndex">Column index.</param>
+            <param name="columnName">Column name.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.DataTableCellEventArgs.RowIndex">
+            <summary>
+            Row index;
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.DataTableCellEventArgs.ColumnIndex">
+            <summary>
+            Column index;
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.DataTableCellEventArgs.ColumnName">
+            <summary>
+            Column name.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.DataTableEventArgs">
+            <summary>
+            Contains an exception.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.DataTableEventArgs.#ctor(System.Data.DataTable)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.DataTableEventArgs.DataTable">
+            <summary>
+            Contains the DataTable.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.ExceptionEventArgs">
+            <summary>
+            Contains an exception.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.ExceptionEventArgs.#ctor(System.Exception)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="ex">Exception.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.ExceptionEventArgs.Exception">
+            <summary>
+            Contains the Exception.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.DataGridViewRowClickEventArgs">
+            <summary>
+            Contains ListViewItem click event data.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.DataGridViewRowClickEventArgs.#ctor(System.Windows.Forms.DataGridViewRow)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="row">Selected item.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.DataGridViewRowClickEventArgs.DataGridViewRow">
+            <summary>
+            Contains the selected ListViewItem.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.ImportExportEventArgs">
+            <summary>
+            Contains information about an Import or Export operation.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.SuccessEventArgs">
+            <summary>
+            Indicates success or failure.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.SuccessEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.SuccessEventArgs.#ctor(System.Boolean,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="success">Success value.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.SuccessEventArgs.Success">
+            <summary>
+            Contains the Success flag.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.ImportExportEventArgs.#ctor(System.Int64,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.ImportExportEventArgs.#ctor(System.Int64)">
+            <summary>
+            Constructor, defaults to Success.
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.ImportExportEventArgs.Count">
+            <summary>
+            Contains the number of items imported or exported.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.ListBoxItemClickEventArgs">
+            <summary>
+            Contains ListBox item click event data.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.ListBoxItemClickEventArgs.#ctor(System.Object)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="item">Selected ListBoxItem.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.ListBoxItemClickEventArgs.Item">
+            <summary>
+            Contains the selected item.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.ListEventArgs`1">
+            <summary>
+            Contains information about an operation which contains a list of items.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.ListEventArgs`1.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.ListViewItemClickEventArgs">
+            <summary>
+            Contains ListViewItem click event data.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.ListViewItemClickEventArgs.#ctor(System.Windows.Forms.ListViewItem)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="item">Selected item.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.ListViewItemClickEventArgs.ListViewItem">
+            <summary>
+            Contains the selected ListViewItem.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.ProgressEventArgs">
+            <summary>
+            Indicates progress.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.ProgressEventArgs.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.ProgressEventArgs.#ctor(System.Decimal)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="total">Total number of items being processed.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.ProgressEventArgs.Current">
+            <summary>
+            Gets or sets the index of the item that was last processed.
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.ProgressEventArgs.Total">
+            <summary>
+            Gets or sets the total number of items to be processed.
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.ProgressEventArgs.Progress">
+            <summary>
+            Gets or sets progress, as a percentage (it will be 100% or less).
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.SavedAsEventArgs">
+            <summary>
+            Contains event data for saving items under a new item group (with a new name).
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.SavedAsEventArgs.#ctor(System.String,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="name">Name of new item group.</param>
+            <param name="success">Status of operation.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.SavedAsEventArgs.#ctor(System.Int64,System.String,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="objectId">Id of new item group.</param>
+            <param name="name">Name of new item group.</param>
+            <param name="success">Status of operation.</param>
+        </member>
+        <member name="P:KCS.Common.Shared.SavedAsEventArgs.Name">
+            <summary>
+            Contains the Name of the new item group.
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.SavedAsEventArgs.ObjectId">
+            <summary>
+            Contains the New Id of the saved item group.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetControlCount``1(System.Windows.Forms.Control)">
+            <summary>
+            Gets the number of instances of a Type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetControls(System.Windows.Forms.Control,System.Boolean)">
+            <summary>
+            Created by 9OPARA7. Retrieves all the controls from a parent, including nested controls.
+            </summary>
+            <param name="parent">Parent control.</param>
+            <param name="includeNested">If true, the search includes nested controls.</param>
+            <returns>List of controls.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetControls(System.Windows.Forms.Control,System.Boolean,System.Collections.Generic.List{System.String})">
+            <summary>
+            Created by 9OPARA7. Retrieves all the controls from a parent, including nested controls.
+            </summary>
+            <param name="parent">Parent control.</param>
+            <param name="includeNested">If true, the search includes nested controls.</param>
+            <param name="controlNames">List of fully-qualified control names to include.</param>
+            <returns>List of controls.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetControls(System.Windows.Forms.Control,System.Boolean,System.Collections.Generic.List{System.Type},System.Collections.Generic.List{System.String})">
+            <summary>
+            Created by 9OPARA7. Retrieves all the controls of particular types from a parent, including nested controls.
+            </summary>
+            <param name="parent">Parent control.</param>
+            <param name="includeNested">If true, the search includes nested controls.</param>
+            <param name="types">List of acceptable control types. They have to be exact types or direct descendants.</param>
+            <param name="controlNames">List of fully-qualified control names to include.</param>
+            <returns>List of controls.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetControlTypes(System.Windows.Forms.Control,System.Boolean)">
+            <summary>
+            Created by 9OPARA7. Gets a list of all the control types inside a given Control.
+            </summary>
+            <param name="parent">Parent control.</param>
+            <param name="includeNested">If true, the search includes nested controls.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetFullyQualifiedName(System.Windows.Forms.Control)">
+            <summary>
+            Created by 9OPARA7. Constructs the fully-qualified name of a control, in the "parent.child" format.
+            This ensures that the name as we use it, is unique.
+            </summary>
+            <param name="control">Control whose name is to be built.</param>
+            <returns>A fully-qualified name.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.SendMouseClick(System.Windows.Forms.Control,System.Drawing.Point,KCS.Common.Shared.Win32API.User32.MouseEvents)">
+            <summary>
+            Sends a mouse event to a control.
+            </summary>
+            <param name="ctrl"></param>
+            <param name="pt"></param>
+            <param name="mouseEvent"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.SendMouseClick(System.Windows.Forms.Control)">
+            <summary>
+            Sends a left-click to the center of a control.
+            </summary>
+            <param name="ctrl"></param>
+            <param name="pt"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.CenterInParent(System.Windows.Forms.Control)">
+            <summary>
+            Created by 9OPARA7. Centers this control in its parent.
+            </summary>
+            <param name="ctrl"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.CenterInParentHorizontal(System.Windows.Forms.Control)">
+            <summary>
+            Created by 9OPARA7. Horizontally centers this control in its parent.
+            </summary>
+            <param name="ctrl"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.CenterInParentVertical(System.Windows.Forms.Control)">
+            <summary>
+            Created by 9OPARA7. Vertically centers this control in its parent.
+            </summary>
+            <param name="ctrl"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetValue(System.Windows.Forms.Control)">
+            <summary>
+            Created by 9OPARA7. Determines the default property of a Control, and returns the value.
+            </summary>
+            <param name="ctrl">Control whose value will be retrieved.</param>
+            <returns>The default value of the control.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.SetValues(System.Windows.Forms.Control,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            Created by 9OPARA7. Loop through all child controls and add the user-entered settings, based on the control's type.
+            </summary>
+            <param name="parent">Parent control.</param>
+            <param name="collection">Collection containing keys.</param>
+            <param name="includeNested">If true, the search includes nested controls.</param>
+            <returns>Dictionary of control values, keyed by the controls' name.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.SetValues(System.Windows.Forms.Control,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean,System.Collections.Generic.List{System.String})">
+            <summary>
+            Created by 9OPARA7. Loop through specified child controls and sets their values.
+            </summary>
+            <param name="parent">Parent control.</param>
+            <param name="collection">Collection containing keys.</param>
+            <param name="includeNested">If true, the search includes nested controls.</param>
+            <param name="controlNames">List of fully-qualified control names to include.</param>
+            <returns>Dictionary of control values, keyed by the controls' name.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.SetValues(System.Windows.Forms.Control,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean,System.Collections.Generic.List{System.Type},System.Collections.Generic.List{System.String})">
+            <summary>
+            Created by 9OPARA7. Loop through specified child controls, of the specified types, and sets their values.
+            </summary>
+            <param name="parent">Parent control.</param>
+            <param name="collection">Collection containing keys.</param>
+            <param name="includeNested">If true, the search includes nested controls.</param>
+            <param name="types">List of acceptable control types.</param>
+            <param name="controlNames">List of fully-qualified control names to include.</param>
+            <returns>Dictionary of control values, keyed by the controls' name.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.SetValue(System.Windows.Forms.Control,System.Object)">
+            <summary>
+            Created by 9OPARA7. Determines the default property of a Control, and sets the value.
+            </summary>
+            <param name="ctrl">Control whose value will be set.</param>
+            <param name="value">Value to assign to the control.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.Clear(System.Windows.Forms.ListView,System.Windows.Forms.ListViewGroup)">
+            <summary>
+            Remove all items belonging to the given group.
+            </summary>
+            <param name="lvw"></param>
+            <param name="lvwGroup"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetValuePropertyName(System.Windows.Forms.Control)">
+            <summary>
+            Created by 9OPARA7. Gets the name of the default property of a Control, based on its type.
+            This method works for the major controls. All other controls (ListView, TreeView, etc) can be handled specially,
+            in the Control.GetValue and Control.SetValue extension methods.
+            </summary>
+            <remarks>
+            For the TreeView, when the Checkboxes property is set, then the value returned should be a collection of
+            full paths to each checked TreeNode. Otherwise, the value is simply the fullpath of the selected TreeNode.
+            </remarks>
+            <param name="parent">Control to query.</param>
+            <returns>A property name.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetValues(System.Windows.Forms.Control,System.Boolean)">
+            <summary>
+            Created by 9OPARA7. Loop through all child controls and gets current data.
+            </summary>
+            <param name="parent">Parent control.</param>
+            <param name="includeNested">If true, the search includes nested controls.</param>
+            <returns>Dictionary of control values, keyed by the controls' name.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetValues(System.Windows.Forms.Control,System.Boolean,System.Collections.Generic.List{System.String})">
+            <summary>
+            Created by 9OPARA7. Loops through specified child controls and gets their data.
+            </summary>
+            <param name="parent">Parent control.</param>
+            <param name="includeNested">If true, the search includes nested controls.</param>
+            <param name="controlNames">Names of controls to include.</param>
+            <returns>Dictionary of control values, keyed by the controls' name.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetValues(System.Windows.Forms.Control,System.Boolean,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Type})">
+            <summary>
+            Created by 9OPARA7. Loops through specified child controls, of the specified type, and gets current data.
+            </summary>
+            <param name="parent">Parent control.</param>
+            <param name="includeNested">If true, the search includes nested controls.</param>
+            <param name="types">List of acceptable types.</param>
+            <param name="controlNames">Names of controls to include.</param>
+            <returns>Dictionary of control values, keyed by the controls' name.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.CheckAllItems(System.Windows.Forms.CheckedListBox)">
+            <summary>
+            Checks All CheckedListBox items
+            </summary>
+            <param name="clst"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.UncheckAllItems(System.Windows.Forms.CheckedListBox)">
+            <summary>
+            Unchecks All CheckedListBox items
+            </summary>
+            <param name="?"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.IsAnyNodeChecked(System.Windows.Forms.TreeView)">
+            <summary>
+            Created by GGEORGIEV.Checks if there are selected nodes
+            </summary>
+            <param name="treeView">Parent TreeView.</param>
+            <returns>TRUE/FALSE</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.IsAnyNodeChecked(System.Windows.Forms.TreeNode)">
+            <summary>
+            Created by GGEORGIEV.Checks if there are selected nodes
+            </summary>
+            <param name="parent">Parent TreeNode.</param>
+            <returns>TRUE/FALSE</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetNode(System.Windows.Forms.TreeView,System.String,System.Windows.Forms.TreeNodeCollection)">
+            <summary>
+            Created by 9OPARA7. Selects a node, given a path.
+            </summary>
+            <param name="tvw">Target TreeView.</param>
+            <param name="path">FullPath of node to select.</param>
+            <param name="nodes">A collection of TreeNodes.</param>
+            <returns>Node matching given FullPath.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetCheckedNodes(System.Windows.Forms.TreeView)">
+            <summary>
+            Created by 9OPARA7. Gets all the checked nodes from a TreeView. It does a deep search.
+            </summary>
+            <param name="treeView">Parent TreeView.</param>
+            <returns>List of checked TreeNodes.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetCheckedNodes(System.Windows.Forms.TreeNode)">
+            <summary>
+            Created by 9OPARA7. Gets all the [flattened] checked nodes under a TreeNode.
+            </summary>
+            <param name="parent">Parent Node.</param>
+            <returns>List of checked TreeNodes.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.SetCheckedNodes(System.Windows.Forms.TreeView,System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Created by 9OPARA7. Checks all the child nodes that match the given paths.
+            </summary>
+            <param name="tvw">Parent TreeView.</param>
+            <param name="fullPaths">List of full paths to the nodes to be checked.</param>
+            <returns>List of checked TreeNodes.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.SetCheckedNodes(System.Windows.Forms.TreeNode,System.Collections.Generic.List{System.String})">
+            <summary>
+            Created by 9OPARA7. Checks all the child nodes that match the given paths.
+            </summary>
+            <param name="parent">Parent Node.</param>
+            <param name="fullPaths">List of full paths to the nodes to be checked.</param>
+            <returns>List of checked TreeNodes.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetLeafNodes(System.Windows.Forms.TreeView)">
+            <summary>
+            Created by 9OPARA7. Gets a list of all the leaf nodes.
+            </summary>
+            <param name="tvw">Parent TreeView.</param>
+            <returns>List of TreeNodes.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetNodes(System.Windows.Forms.TreeView)">
+            <summary>
+            Created by 9OPARA7. Gets a flattened list of all the nodes.
+            </summary>
+            <param name="tvw">Parent TreeView.</param>
+            <returns>List of TreeNodes.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.GetNodes(System.Windows.Forms.TreeNode)">
+            <summary>
+            Created by 9OPARA7. Gets a flattened list of all the nodes under a TreeNode.
+            </summary>
+            <param name="parent">Parent Node.</param>
+            <returns>List of TreeNodes.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ControlsExtensions.IsDesignerHosted(System.Windows.Forms.Control)">
+            <summary>
+            Created by 9OPARA7. Gets if the control is in design mode, or if any of its parents are in design mode.
+            </summary>
+            <remarks>It took me a while to find a system that works. DO NOT MESS WITH THIS METHOD.</remarks>
+        </member>
+        <member name="T:KCS.Common.Shared.Extensions">
+            <summary>
+            Contains general extension methods.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.FlashWindow(System.Windows.Forms.Form)">
+            <summary>
+            Flashes a window.
+            </summary>
+            <param name="form">Form whose window will be flashed.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.FlashWindow(System.Windows.Forms.Form,KCS.Common.Shared.Win32API.User32.FlashWindow)">
+            <summary>
+            Flashes a window.
+            </summary>
+            <param name="form">Form whose window will be flashed.</param>
+            <param name="mode">Window flashing mode</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.EnsureIndexes(System.Data.DataTable)">
+            <summary>
+            Make sure all the rows in a table have an Index, regardless of position. Skips deleted rows.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.EnsureIndexes(System.Data.DataView)">
+            <summary>
+            Make sure all the rows in the view have an Index.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetDictionary``2(System.Data.DataTable,System.String)">
+            <summary>
+            Gets 2 columns of a table as a list of non-unique Key-Value pairs.
+            </summary>
+            <param name="dt">Table to work on.</param>
+            <param name="columnName">Name of the column that will be the key and value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetDictionary``2(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            Gets 2 columns of a table as a list of non-unique Key-Value pairs.
+            </summary>
+            <param name="table">Table to work on.</param>
+            <param name="keyColumnName">Name of the column that will be the keys.</param>
+            <param name="valueColumnName">Name of the column that will be the values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetColumnValuesAsCSV(System.Data.DataTable,System.String)">
+            <summary>
+            Gets a list of all the values of a particular column, as a CSV.
+            </summary>
+            <param name="table">Table to work on.</param>
+            <param name="columnName">Name of the column to be extracted.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetColumnValuesAsList``1(System.Data.DataTable,System.String,System.Boolean)">
+            <summary>
+            Gets a list of all the values of a particular column, as a List.
+            </summary>
+            <param name="table">Table to work on.</param>
+            <param name="columnName">Name of the column to be extracted.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetColumnValuesAsList``1(System.Data.DataView,System.String,System.Boolean)">
+            <summary>
+            Gets a list of all the values of a particular column, as a List.
+            </summary>
+            <param name="table">Table to work on.</param>
+            <param name="columnName">Name of the column to be extracted.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.TrimToColumns(System.Data.DataTable,System.String[])">
+            <summary>
+            Reduces the columns in a table to a set list.
+            </summary>
+            <param name="table">Table to reduce.</param>
+            <param name="columnNames">Names of the columns to keep.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.TrimToColumns(System.Data.DataTable,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Reduces the columns in a table to a set list.
+            </summary>
+            <param name="table">Table to reduce.</param>
+            <param name="columnNames">Names of the columns to keep.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.Split(System.Data.DataTable,System.Int32)">
+            <summary>
+            Created by Georgi.
+            </summary>
+            <param name="dt"></param>
+            <param name="rowLimit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetXML(System.Data.DataTable,System.String,KCS.Common.Shared.Extensions.FormatDataForXMLDelegate)">
+            <summary>
+            Gets the pure-XML for saving.
+            </summary>
+            <param name="dt">This datatable.</param>
+            <param name="rootElementName">Name of root element.</param>
+            <param name="formatDelegate">Method to be called in case we need special formatting.</param>
+            <returns>Well-formed XML.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.SetValueWithoutModifyingRow``1(System.Data.DataRow,System.String,``0)">
+            <summary>
+            Sets the value in a row without disturbing the Modified flag.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dr"></param>
+            <param name="columnName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetFilterForColumns(System.Data.DataRow,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Builds a filter from a list of columns.
+            </summary>
+            <param name="olumns"></param>
+            <param name="dr"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetFilterForColumns(System.Data.DataRow,System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            Builds a filter from a list of columns.
+            </summary>
+            <param name="olumns"></param>
+            <param name="dr"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetColumnPropertyValue``1(System.Data.DataColumnCollection,System.String)">
+            <summary>
+            Gets the values of a particular property of a DataColumn collection.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <remarks>This should be refactored to handle different inputs</remarks>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.IsCellValueChanged(System.Data.DataRow,System.String)">
+            <summary>
+            Determines whether a column has been changed.
+            </summary>
+            <param name="columnName">Column name</param>
+            <param name="row">the datarow</param>
+            <returns>true if its changed, else false</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetConcatenatedValues(System.Data.DataRow,System.String[])">
+            <summary>
+            Gets a string of all the values in a DataRow.
+            </summary>
+            <param name="dr"></param>
+            <returns></returns>
+            <remarks>
+            1. This does not check for custom data types.
+            </remarks>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetDeletedRowCount(System.Data.DataTable)">
+            <summary>
+            Gets the number of rows that were deleted.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetChangedRowCount(System.Data.DataTable)">
+            <summary>
+            Gets the number of rows that were changed (added, modified, deleted).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetAddedRowCount(System.Data.DataTable)">
+            <summary>
+            Gets the number of rows that were added.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetModifiedRowCount(System.Data.DataTable)">
+            <summary>
+            Gets the number of rows that were modified.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.IsAnyRowModified(System.Data.DataTable)">
+            <summary>
+            Checks to see if any rows were changed or deleted.
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.Center(System.Drawing.Rectangle)">
+            <summary>
+            Gets the center of a Rect.
+            </summary>
+            <param name="rect"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetHexCode(System.Drawing.Color)">
+            <summary>
+            Gets the hexcode representation of a color, without the # sign.
+            </summary>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetHexCode(System.Drawing.Color,System.Boolean)">
+            <summary>
+            Gets the hexcode representation of a color, without the # sign, with or without the alpha portion.
+            </summary>
+            <param name="color">Color to process</param>
+            <param name="includeAlpha">If true, the alpha value is included.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetValue``1(System.Windows.Forms.DataGridViewRow,System.String)">
+            <summary>
+            Gets a value from a DataRow, taking into consideration the possibility of it being DBNull.
+            </summary>
+            <param name="row">Row containing value.</param>
+            <param name="columnName">Column name.</param>
+            <param name="default">Default value.</param>
+            <returns>Column value, or default.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetValue``1(System.Data.DataRow,System.String,``0)">
+            <summary>
+            Gets a value from a DataRow, taking into consideration the possibility of it being DBNull.
+            </summary>
+            <param name="row">Row containing value.</param>
+            <param name="columnName">Column name.</param>
+            <param name="default">Default value.</param>
+            <returns>Column value, or default.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.CopyFrom(System.Data.DataRow,System.Data.DataRow)">
+            <summary>
+            Copies data from one row to another. Any columns that don't exist in the target row
+            are skipped.
+            </summary>
+            <param name="drTarget">Target row.</param>
+            <param name="dtSource">Source row.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetDataRowView(System.Data.DataRow)">
+            <summary>
+            Gets the DataRowView that matches the given DataRow.
+            </summary>
+            <param name="drTarget">Target row.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.CopyFrom(System.Data.DataRow,System.Data.DataRow,System.Data.DataRowVersion)">
+            <summary>
+            Copies data of a particular version from one row to another. Any columns that don't exist in the target row
+            are skipped.
+            </summary>
+            <param name="drTarget">Target row.</param>
+            <param name="dtSource">Source row.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.CopyFrom(System.Data.DataRow,System.Data.DataRow,System.Collections.Generic.List{System.String})">
+            <summary>
+            Copies data from one row to another. Any columns that don't exist in the target row
+            are skipped.
+            </summary>
+            <param name="drTarget">Target row.</param>
+            <param name="dtSource">Source row.</param>
+            <returns>Number of fields copied.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.EnsureColumns``1(System.Data.DataTable,System.String[])">
+            <summary>
+            Ensures that a table contains the given columns of the given type.
+            </summary>
+            <param name="dt">Datatable.</param>
+            <param name="type">Desired type of the columns.</param>
+            <param name="columns">Column Names.</param>
+            <returns>Number of columns added.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.EnsureColumns(System.Data.DataTable,System.Collections.Generic.KeyValuePair{System.String,System.Type}[])">
+            <summary>
+            Ensures that a table contains the given columns.
+            </summary>
+            <param name="dt">Datatable.</param>
+            <param name="columns">Columns and matching types.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.EnsureColumns(System.Data.DataTable,System.Collections.Generic.Dictionary{System.String,System.Type})">
+            <summary>
+            Ensures that a table contains the given columns.
+            </summary>
+            <param name="dt">Datatable.</param>
+            <param name="columns">Columns and matching types.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.EnsureColumn(System.Data.DataTable,System.String,System.Type)">
+            <summary>
+            Makes sure that a column is in the table.
+            </summary>
+            <param name="dt"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.EnsureColumn(System.Data.DataTable,System.String)">
+            <summary>
+            Makes sure that a string column is in the given table.
+            </summary>
+            <param name="dt"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.EnsureColumnIsType(System.Data.DataTable,System.String,System.Type)">
+            <summary>
+            Ensures that a given column is of the particular type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <param name="columnName"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.EnsureColumnIsType(System.Data.DataTable,System.String,System.Type,System.Collections.Generic.List{System.Int32}@)">
+            <summary>
+            Ensures that a given column is of the particular type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <param name="columnName"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.EnsureColumn``1(System.Data.DataTable,System.String)">
+            <summary>
+            After adding a column, sets the default value in all rows.
+            </summary>
+            <typeparam name="T">Type.</typeparam>
+            <param name="dt"></param>
+            <param name="name"></param>
+            <param name="type">Type of column.</param>
+            <param name="defaultValue">Default value. If null, the allowNull parameter is ignored.</param>
+            <param name="allowNull">Only used if the defaultValue parameter is not null.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetString(System.Byte[])">
+            <summary>
+            Converts a raw binary data back to a string, using the default ASCII encoding.
+            </summary>
+            <param name="data">Data to convert.</param>
+            <returns>A string, or null.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetString(System.Byte[],System.Text.Encoding)">
+            <summary>
+            Converts a raw binary data back to a string.
+            </summary>
+            <param name="data">Data to convert.</param>
+            <param name="encoding">Desired encoding.</param>
+            <returns>A string, or null.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetLength(System.String,System.Windows.Forms.Control)">
+            <summary>
+            Gets the length of a string, in the context of its host control.
+            </summary>
+            <param name="str"></param>
+            <param name="ctrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetLongestString(System.Collections.Generic.IList{System.String},System.Windows.Forms.Control,System.Single)">
+            <summary>
+            Created by 9OPARA7. Gets the width of the longest string in a collection.
+            </summary>
+            <param name="list">List of strings.</param>
+            <param name="ctrl">Control surface used as reference.</param>
+            <param name="defaultValue">Default value, in case the method fails.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetFiles(System.IO.DirectoryInfo,System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets all the files from a given folder, that match certain extensions
+            </summary>
+            <param name="path">Folder to list files from.</param>
+            <param name="extensions">Array of filename extensions.</param>
+            <returns>Array of FileInfo objects.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.Split(System.String,System.String)">
+            <summary>
+            Dot Net DOES NOT have a String split function.  It can only split by a character or ONE OF the characters but not ALL characters.
+            </summary>
+            <param name="inString"></param>
+            <param name="delimiter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.Replace(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+            Performs a case-insensitive (or sensitive) replace.
+            </summary>
+            <param name="input"></param>
+            <param name="oldValue"></param>
+            <param name="newValue"></param>
+            <param name="comparison"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.ToRoundTripString(System.DateTime,System.Boolean)">
+            <summary>
+            Gets the date and time in a format that can be sent via querystring, with or without the time part.
+            </summary>
+            <param name="date">DateTime instance.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.RemoveMilliseconds(System.DateTime)">
+            <summary>
+            Gets the date and time, without the milliseconds.
+            </summary>
+            <param name="date">DateTime instance.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetMonthName(System.DateTime)">
+            <summary>
+            Gets the full month name.
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetAbbreviatedMonthName(System.DateTime)">
+            <summary>
+            Gets the abbreviated month name.
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.Get4DigitUTCTime(System.DateTime,System.Boolean)">
+            <summary>
+            Gets the 4-digit UTC time from a DateTime.
+            </summary>
+            <param name="dt">DateTime value.</param>
+            <param name="militaryTime">If true, returns the time in 24-hour format. Otherwise, 12-hour format.</param>
+            <returns>4-digit time string.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.ToCommonString(System.DateTime)">
+            <summary>
+            A "common language" representation of the DATE part only.
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.ToShortString(KCS.Common.Shared.DateRange,System.Boolean)">
+            <summary>
+            A short string representation of a date.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetValuePropertyInfo(System.Type,System.String)">
+            <summary>
+            Get the first PropertyInfo object matching the given Property name.
+            </summary>
+            <param name="type">Type to query.</param>
+            <param name="propertyName">Propery name for which to search.</param>
+            <returns>Property Info.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Extensions.GetQuotedString(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Retruns a string list with quoted strings 
+            <example>list.GetQuotedString("'")</example>
+            </summary>
+            <param name="list"></param>
+            <param name="quote">The quote to use</param>
+            <returns></returns>
+        </member>
+        <member name="T:KCS.Common.Shared.Extensions.FormatDataForXMLDelegate">
+            <summary>
+            Delegate to support the GetXML method.
+            </summary>
+            <param name="dr"></param>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.FromDescription``1(System.Type,System.String)">
+            <summary>
+            Gets an enumeration based on the matching Description attribute.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumType"></param>
+            <param name="enumDesc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.GetDescription(System.Enum)">
+            <summary>
+            Gets the Description attribute of any enumeration.
+            </summary>
+            <param name="en">Enumeration item.</param>
+            <returns>Human-readable description.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.GetAttribute``1(System.Enum)">
+            <summary>
+            Gets a custom attribute of any enumeration.
+            </summary>
+            <param name="en">Enumeration item.</param>
+            <returns>Human-readable description.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.GetAttribute``1(System.Reflection.FieldInfo)">
+            <summary>
+            Gets a custom attribute.
+            </summary>
+            <param name="en">Enumeration item.</param>
+            <returns>Human-readable description.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.GetAttribute``1(System.Reflection.MemberInfo)">
+            <summary>
+            Gets a custom attribute.
+            </summary>
+            <param name="en">Enumeration item.</param>
+            <returns>Human-readable description.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.GetAttribute``1(System.Reflection.MethodInfo)">
+            <summary>
+            Gets a custom attribute of a Method.
+            </summary>
+            <returns>Human-readable description.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.GetAttribute``1(System.Reflection.PropertyInfo)">
+            <summary>
+            Gets a custom attribute of a Property.
+            </summary>
+            <returns>Human-readable description.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.GetAttribute``1(System.Type,System.Boolean)">
+            <summary>
+            Gets a custom attribute of any Type.
+            </summary>
+            <param name="en">Enumeration item.</param>
+            <returns>Human-readable description.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.GetTaggedProperties``1(System.Type)">
+            <summary>
+            Gets all properties tagged with SettingPropertyAttribute.
+            </summary>
+            <returns>Dictionary of PropertyInfo and SettingPropertyAttribute.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.ToNumber``1(System.Enum)">
+            <summary>
+            Returns the numeric representation of an Enumeration member.
+            </summary>
+            <param name="en">Enumeration item.</param>
+            <returns>Short representation of the item.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.ToDataTable(System.Type)">
+            <summary>
+            Converts an enumeration to a table.
+            </summary>
+            <param name="enumType"></param>
+            <returns>Table with 2 columns: Key and Value</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.ToDictionary``1(System.Type,System.Boolean)">
+            <summary>
+            Converts an enumeration to a Dictionary.
+            </summary>
+            <param name="enumType"></param>
+            <returns>Dictionary.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.GetStackFrames(System.Exception)">
+            <summary>
+            Constructs and populates the StackFrames class.
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.GetStackFramesString(System.Exception)">
+            <summary>
+            Constructs and populates the StackFrames class.
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.ReflectionExtensions.GetAllExceptions(System.Exception)">
+            <summary>
+            Recursively gets all the nested exceptions.
+            </summary>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KCS.Common.Shared.Impersonation">
+            <summary>
+             Account Impersonation code that allows user to run a portion of a code under another account. Works on Windows XP. 
+             Make sure to call UndoImpersonation()
+             Original code has been taken from MSDN and modified to fit DV2 needs
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.Impersonation.ErrorCode">
+            <summary>
+            When impersonation fails i.e. returns False, returns the error code 
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.GraphicsExtensions">
+            <summary>
+            Utility methods for graphics.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetNamedColors">
+            <summary>
+            Created by 9OPARA7. Gets all Named colors, including "Transparent". That is, Known colors that are NOT System colors, sorted by hue.
+            
+            </summary>
+            <returns>IEnumerable of Colors.</returns>
+            <remarks>This method ignores the Transparent color.</remarks>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetNamedColors(System.Boolean,System.Boolean)">
+            <summary>
+            Created by 9OPARA7. Gets all Named colors. That is, Known colors that are NOT System colors.
+            </summary>
+            <param name="sortByShade">If TRUE, the results are sorted by shade. Else, they are sorted by name.</param>
+            <param name="includeTransparent">If true, includes the "transparent" color.</param>
+            <returns>IEnumerable of Colors.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetScreenshot(System.Windows.Forms.Screen,System.Int32,System.Int32)">
+            <summary>
+            Get a snapshot of a screen.
+            </summary>
+            <param name="screen">Screen to capture.</param>
+            <param name="width">Desired width.</param>
+            <param name="height">Desired height.</param>
+            <returns>Captured image.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetScreenshot(System.Windows.Forms.Screen,System.Byte)">
+            <summary>
+            Get a resized (nicely resampled) snapshot of a Screen.
+            </summary>
+            <param name="screen"></param>
+            <param name="resizeFactor">Percent by which to adjust the size. 100 means no resize.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetScreenshot(System.Windows.Forms.Screen)">
+            <summary>
+            Get a full snapshot of a Screen.
+            </summary>
+            <param name="screen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.IsImageFile(System.String)">
+            <summary>
+            Created by 9OPARA7. Checks to see if a file is really an image.
+            </summary>
+            <param name="filename"></param>
+            <returns>TRUE if the given filename points to a valid image.</returns>
+            <remarks>
+            This "quick test" loads the entire image into memory. Find a way to do this more efficiently
+            </remarks>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetBytes(System.Drawing.Image,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            Converts an image to raw binary data.
+            </summary>
+            <param name="image">Image to convert.</param>
+            <param name="format">Image format.</param>
+            <returns>The raw bytes of the image, or null.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetPostScript(System.String)">
+            <summary>
+            Converts an image to Postscript.
+            </summary>
+            <param name="imageFilePath">Path to image that will be converted.</param>
+            <returns>Postscript data as a byte array.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetPostScript(System.Drawing.Image,System.String)">
+            <summary>
+            Converts an image to Postscript.
+            </summary>
+            <param name="bitmap">Bitmap to convert.</param>
+            <param name="imageName">Name of the image to be embedded. Any string is fine. Empty string will be defaulted to "Image".</param>
+            <returns>Postscript data as a byte array.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetFileExtension(System.Byte[])">
+            <summary>
+            Gets the appropriate extension of an image based on the raw format.
+            </summary>
+            <param name="imageData">Data to analyze.</param>
+            <returns>Extension.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetFileExtension(System.Drawing.Image)">
+            <summary>
+            Gets the appropriate extension of an image.
+            </summary>
+            <param name="image">Image to analyze.</param>
+            <returns>Extension.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetImage(System.Byte[])">
+            <summary>
+            Converts a raw binary data back to an Image.
+            </summary>
+            <param name="data">Data to convert.</param>
+            <returns>An Image, or null.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.InterpreteColor(System.String)">
+            <summary>
+            Attempts to translate a string to a Color.
+            </summary>
+            <param name="colorValue">String containing [what we hope is] a color value.</param>
+            <returns>If unable to translate, returns Transparent.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.ResizeImage(System.String,System.Drawing.Size)">
+            <summary>
+            Proportionately resample an image (from a file) to fit the necessary dimensions.
+            </summary>
+            <param name="path">Path to original image.</param>
+            <param name="destSize">New size.</param>
+            <returns>Resampled bitmap.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.ResizeImage(System.Byte[],System.Drawing.Size)">
+            <summary>
+            Proportionately resample an image (from a file) to fit the necessary dimensions.
+            </summary>
+            <param name="pictureData">Image data.</param>
+            <param name="destSize">New size.</param>
+            <returns>Resampled bitmap.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.ResizeImage(System.Drawing.Image,System.Drawing.Size)">
+            <summary>
+            Proportionately resample an image to fit the necessary dimensions.
+            </summary>
+            <param name="img">Original image.</param>
+            <param name="destSize">New size.</param>
+            <returns>Resampled image.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.GraphicsExtensions.GetImageFromByte(System.Byte[])">
+            <summary>
+            Returns an Image from Byte[]
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="P:KCS.Common.Shared.GraphicsExtensions.HtmlColorMap">
+            <summary>
+            Created by 9OPARA7. Contains a dictionary of colors keyed by Hex Code.
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.GraphicsExtensions.ImageExtensions">
+            <summary>
+            Created by 9OPARA7. Contains the list of valid image extensions.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.IListControl">
+            <summary>
+            Defines members for making sure a control can be used with the ExpandingPopup form, etc.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.NameValuePair">
+            <summary>
+            Represents a single parameter.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.NameValuePair.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="name">Parameter name.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.NameValuePair.ToString">
+            <summary>
+            Contains the string representation of the parameter.
+            </summary>
+            <returns>[Name] = [Value]</returns>
+        </member>
+        <member name="P:KCS.Common.Shared.NameValuePair.Name">
+            <summary>
+            Parameter name.
+            </summary>
+        </member>
+        <member name="P:KCS.Common.Shared.NameValuePair.Value">
+            <summary>
+            Parameter value.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Net">
+            <summary>
+            Network and Web utilities.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Net.REQUEST_TIMEOUT">
+            <summary>
+            Default request timeout, in seconds.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Net.IsNetworkConnected">
+            <summary>
+            Returns a flag indicating that the network is connected and available.
+            </summary>
+            <returns>True or false.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Net.UrlResourceExists(System.String,System.Boolean@)">
+            <summary>
+            Checks to see if the target of a URL exists, using the default Request timeout.
+            </summary>
+            <param name="url">Url to check.</param>
+            <param name="timedOut">Contains TRUE if the request timed out.</param>
+            <returns>True if the target exists.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Net.UrlResourceExists(System.String,System.Int32,System.Boolean@)">
+            <summary>
+            Checks to see if the target of a URL exists.
+            </summary>
+            <param name="url">Url to check.</param>
+            <param name="requestTimeOut">Desired request timeout.</param>
+            <param name="timedOut">Contains TRUE if the request timed out.</param>
+            <returns>True if the target exists.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Net.DownloadFile(System.String)">
+            <summary>
+            Downloads any kind of file from the given URL, using the default timeout.
+            </summary>
+            <param name="url">Url to open.</param>		
+            <returns>Path to temporary file.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Net.DownloadData(System.String,KCS.Common.Shared.Enumerations.HttpRequestMethod,System.Int32)">
+            <summary>
+            Downloads binary data from a URL.
+            </summary>
+            <typeparam name="T">Desired type.</typeparam>
+            <param name="url">Source URL.</param>
+            <param name="timeout">Timeout, in seconds.</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Net.DownloadFile(System.String,System.Int32)">
+            <summary>
+            Downloads any kind of file from the given URL.
+            </summary>
+            <param name="url">Url to open.</param>
+            <param name="timeout">Timeout in seconds.</param>
+            <returns>Path to temporary file.</returns>
+        </member>
+        <member name="T:KCS.Common.Shared.ShellIO">
+            <summary>
+            Wrapper for P/INVOKE methods in shell32.dll
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.ShellIO.AllFilesDialogFilter">
+            <summary>
+            Wildcard filter for all files.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.ShellIO.ImagesDialogFilter">
+            <summary>
+            Wildcard filter for all bitmap image files.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.ShellIO.CommonDocumentsDialogFilter">
+            <summary>
+            Wildcard filter for common office formats.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.CopyFile(System.Windows.Forms.Form,System.String,System.String,System.Boolean@)">
+            <summary>
+            Copies a file from one place to another, using the Shell file copying routines.
+            </summary>
+            <param name="form">Parent form.</param>
+            <param name="source">Source path.</param>
+            <param name="destination">Destination path.</param>
+            <param name="aborted">Was the operation aborted?</param>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.CopyFile(System.IntPtr,System.String,System.String,System.String,System.Boolean@)">
+            <summary>
+            Copies a file from one place to another, using the Shell file copying routines.
+            </summary>
+            <param name="formHandle">Parent form's handle.</param>
+            <param name="source">Source path.</param>
+            <param name="destination">Destination path.</param>
+            <param name="progressTitle">Title of progress bar.</param>
+            <param name="aborted">Was the operation aborted?</param>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.DeleteFile(System.Windows.Forms.Form,System.String,System.Boolean@)">
+            <summary>
+            Deletes a file.
+            </summary>
+            <param name="form">Parent form.</param>
+            <param name="path">Full path to file.</param>
+            <param name="aborted">Was the operation aborted?</param>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.GetFileIcon(System.String)">
+            <summary>
+            Gets the icon associated with a given file. This overload assumes that we want the small icon size.
+            </summary>
+            <param name="path">Path to file.</param>
+            <returns>Icon associated with the given file.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.GetFileIcon(System.String,KCS.Common.Shared.ShellIO.FileIconSize)">
+            <summary>
+            Gets the icon associated with a given file.
+            </summary>
+            <param name="fullpath">Path to file.</param>
+            <param name="iconSize">Size of icon to return.</param>
+            <returns>Icon associated with the given file.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.GetFileType(System.String)">
+            <summary>
+            Gets the document type of a file.
+            </summary>
+            <param name="fullpath">Full path to file.</param>
+            <returns>Document type of file.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.GetFileIconPath(System.String)">
+            <summary>
+            Gets the path to the icon associated with a file.
+            </summary>
+            <param name="filePath">Path to document that we need an image for.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.GetFileIconPath(System.String,System.String)">
+            <summary>
+            Gets the path to the icon associated with a file.
+            </summary>
+            <param name="filePath">Path to document that we need an image for.</param>
+            <param name="targetDirectory">Place in which to put the image.</param>
+            <remarks>
+            When the icon for a new file type is needed, add it to the DocIcons folder
+            and recompile the library.
+            </remarks>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.RunCommandProcess(System.String,System.String,System.Nullable{System.IntPtr})">
+            <summary>
+            Runs the command processor, passing parameters.
+            </summary>
+            <param name="fullpath">Path to file to run/open.</param>
+            <param name="errorDialogParentHandle">Handle of parent window for error message.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.RunShellProcess(System.String,System.String,System.Nullable{System.IntPtr})">
+            <summary>
+            Runs a process using the shell.
+            </summary>
+            <param name="fullpath">Path to file to run/open.</param>
+            <param name="errorDialogParentHandle">Handle of parent window for error message.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.KillProcesses(System.String,System.Int32)">
+            <summary>
+            Closes or kills all processes that start with a particular name.
+            </summary>
+            <param name="name">Process name.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.CloseOrKillProcesses(System.String,System.Int32,System.UInt32,System.Boolean)">
+            <summary>
+            Closes or kills all processes that start with a particular name.
+            </summary>
+            <param name="name">Process name.</param>
+            <param name="timeoutSeconds">Time to give each instance to close. 0 means wait indefinitely.</param>
+            <param name="force">If true, process is immediately terminated, with extreme prejudice.</param>
+            <returns>Number of processes killed.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.GetFileBytes(System.String)">
+            <summary>
+            Return a file as a byte array, without deleting the original.
+            </summary>
+            <param name="path">Path to file.</param>
+            <returns>Byte array.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.GetFileBytes(System.String,System.Boolean,System.Boolean@)">
+            <summary>
+            Return the file as a byte array, optionally deleting the original.
+            </summary>
+            <param name="path">Complete path to the file.</param>
+            <param name="deleteOriginal">If true, deletes the original file.</param>
+            <returns>The raw bytes of the file.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.ValidateDirectoryNameChars(System.String)">
+            <summary>
+            Confirms that the characters in a Directory path are good, by attempting to get information
+            on the directory.
+            </summary>
+            <param name="path">Directory path to check.</param>
+            <returns>True if the characters are good.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.ValidateFileNameChars(System.String)">
+            <summary>
+            Confirms that the characters in a File path are good, by attempting to get information
+            on the File.
+            </summary>
+            <param name="path">File path to check.</param>
+            <returns>True if the characters are good.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.ValidateDirectoryWritable(System.String)">
+            <summary>
+            Confirms that the directory is writable.
+            </summary>
+            <param name="path">Directory path to check.</param>
+            <returns>True if the directory is writable are good.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.ConnectNetworkDrive(System.String)">
+            <summary>
+            Attempts to connect a Network Drive. This method needs to handle the error messages returned.
+            </summary>
+            <param name="localDriveLetter"></param>
+            <param name="folder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.ShellIO.DisconnectNetworkDrive(System.String)">
+            <summary>
+            Disconnects the network drive.
+            </summary>
+            <param name="localDriveLetter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KCS.Common.Shared.ShellIO.FileIconSize">
+            <summary>
+            Enumerates the icon sizes.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.ShellIO.FileIconSize.Small">
+            <summary>
+            16x16 pixels
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.ShellIO.FileIconSize.Large">
+            <summary>
+            32x32 pixels
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Strings">
+            <summary>
+            Utility methods for strings.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.ConvertToString(System.Object)">
+            <summary>
+            Attempts to convert any object to a string. The default is am empty string.
+            </summary>
+            <param name="obj">Object to convert.</param>
+            <returns>A string.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.CsvToListIn64(System.String)">
+            <summary>
+            Builds a list from from a collection of IDs.
+            </summary>
+            <param name="idList">Comma-separated list of IDs.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.CsvToListIn64(System.String,System.Char)">
+            <summary>
+            Builds a list from from a collection of IDs.
+            </summary>
+            <param name="idList">Comma-separated list of IDs.</param>
+            <param name="separator">Character to use as the separator.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.Replace(System.String,System.String,System.String)">
+            <summary>
+            Performs a case-insensitive string replacement.
+            </summary>
+            <param name="source">Input string.</param>
+            <param name="oldValue">String to look for. Supports regular expressions.</param>
+            <param name="newValue">New string.</param>
+            <returns>Modified string.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.Truncate(System.String,System.Int32,System.String)">
+            <summary>
+            Truncates a string to a certain length.
+            </summary>
+            <param name="original">Original string.</param>
+            <param name="maxLength">Maximum length of string.</param>
+            <param name="trailer">String to add to the end of truncated original.</param>
+            <returns>Truncated string, with optional trailer.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.IsPasswordStrong(System.String)">
+            <summary>
+            Verifies that a password is strong.
+            </summary>
+            <param name="password">Password string.</param>
+            <returns>True if the password is considered strong.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.CreateHash(System.IO.Stream)">
+            <summary>
+            Creates a string hash of a stream.
+            </summary>
+            <param name="stream">Stream containing source of hash.</param>
+            <returns>String.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.IsValidEmail(System.String)">
+            <summary>
+            Returns TRUE if the given string is a valid email address.
+            </summary>
+            <param name="str">String to check.</param>
+            <returns>True or False.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.IsValidUrl(System.String)">
+            <summary>
+            Returns TRUE if the given string is a valid URL.
+            </summary>
+            <param name="str">String to check.</param>
+            <returns>True or False.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.IsWebImageFile(System.String)">
+            <summary>
+            Checks a filename to see if it has the extension of a common-web file.
+            </summary>
+            <param name="filename">Filename to check.</param>
+            <returns>TRUE if extension matches a common web image.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.IsNumeric(System.Object)">
+            <summary>
+            Checks to see if an object is a number of any kind.
+            </summary>
+            <param name="ObjectToTest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.IsBoolean(System.Object)">
+            <summary>
+            Checks to see if an object is a boolean.
+            </summary>
+            <param name="ObjectToTest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.ConvertToInt(System.String)">
+            <summary>
+            Returns TRUE if the given string is a valid Int. If not, returns 0.
+            </summary>
+            <param name="string">String to check.</param>
+            <returns>Value of string as an Int.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.ConvertToByte(System.String,System.Byte)">
+            <summary>
+            Returns TRUE if the given string is a valid Byte. If not, returns the default.
+            </summary>
+            <param name="string">String to check.</param>
+            <param name="default">Default value to return.</param>
+            <returns>Value of string as an Byte.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.ConvertToBoolean(System.Object)">
+            <summary>
+            Returns TRUE if the given object is a valid bool. If not, returns false.
+            </summary>
+            <param name="value">Object to check.</param>
+            <returns>Value of string as a bool.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.ConvertToLong(System.String)">
+            <summary>
+            Returns a value converted to Long. If not, returns 0.
+            </summary>
+            <param name="string">String to check.</param>
+            <returns>Value of string as a Long.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.ConvertToDecimal(System.String,System.Decimal)">
+            <summary>
+            Returns a value converted to Decimal. If not, returns  the second parameter.
+            </summary>
+            <param name="string">String to check.</param>
+            <param name="default">Default value.</param>
+            <returns>Value of string as a Long.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.ConvertToInt(System.String,System.Int32)">
+            <summary>
+            Returns a Long if the given string is a valid number. If not, returns a default number.
+            </summary>
+            <param name="string">String to check.</param>
+            <param name="default">Default number.</param>
+            <returns>True or False.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.ConvertToShort(System.String)">
+            <summary>
+            Returns TRUE if the given string is a valid Short. If not, returns 0.
+            </summary>
+            <param name="string">String to check.</param>
+            <returns>Value of string as a short.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.ConvertToDateTime(System.String)">
+            <summary>
+            Returns a Date if the given string is a valid Long. If not, returns DateTime.MinValue.
+            </summary>
+            <param name="string">String to check.</param>
+            <returns>Value of string as a Long.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.StripHtml(System.String)">
+            <summary>
+            Attempts to strip a string of all HTML tags.
+            </summary>
+            <param name="string">String to process.</param>
+            <returns>A string that is stripped of all HTML tags.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.StripNonLettersOrDigits(System.String)">
+            <summary>
+            Removes all non-digit and non-character characters from a string.
+            </summary>
+            <param name="string">String to strip.</param>
+            <returns>Stripped and fixed string.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.StripNonLettersOrDigits(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Removes all characters in a string that might be a delimiter.
+            </summary>
+            <param name="string">String to strip.</param>
+            <param name="allowWhiteSpacesAndPunctuation">If true, leaves whitespaces alone..</param>
+            <returns>Stripped and fixed string.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.StripNonDigits(System.String)">
+            <summary>
+            Removes all non-digit characters from a string.
+            </summary>
+            <param name="string">String to strip.</param>
+            <returns>Stripped and fixed string.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.StripInvalidPathChars(System.String)">
+            <summary>
+            Removes all invalid Path characters from a filename.
+            </summary>
+            <param name="filename">Filename to strip.</param>
+            <returns>Stripped and fixed filename.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.StripInvalidDirectoryChars(System.String)">
+            <summary>
+            Removes all invalid Path characters from a filename.
+            </summary>
+            <param name="filename">Filename to strip.</param>
+            <returns>Stripped and fixed filename.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.FormatForXML(System.Object)">
+            <summary>
+            Replace those characters disallowed in XML documents
+            </summary>
+            <param name="input">Data to be formatted.</param>
+            <returns>String without any characters illegal in XML.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Strings.FormatPhoneNumber(System.String)">
+            <summary>
+            Attempts to formats a number as a phone number.
+            </summary>
+            <param name="string">String to format.</param>
+            <returns>Stripped and fixed string.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.OSEnvironment.GetMappedApplicationPath">
+            <summary>
+            Gets the current Website's folder.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.OSEnvironment.GetApplicationVersion">
+            <summary>
+            Attempts to get the PUBLISH version of an application. If that fails, gets the Assembly version.
+            </summary>
+            <returns>System.Version.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.OSEnvironment.GetWindowsVersion">
+            <summary>
+            Retrieves the Windows operating system version.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KCS.Common.Shared.TreeNodeComparer">
+            <summary>
+            Compares TreeNodes.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Utility">
+            <summary>
+            Contains general utility methods. Most of these are legacy methods (pre .Net 2.0), obsolete, or just not well-written.
+            Most can be moved to other classes. After moving them, keep all the data-related methods here and rename the file to "Data.cs".
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetResource``1(System.Type,System.String)">
+            <summary>
+            Gets a resource whose name matches a given string. This assumes that the resource file is the "Properties" resource file.
+            </summary>
+            <typeparam name="T">Resource type.</typeparam>
+            <param name="type">Type.</param>
+            <param name="resourceName">Resource name (key).</param>
+            <returns>If resource not found, returns null.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetResource``1(System.Reflection.Assembly,System.String,System.String)">
+            <summary>
+            Gets a resource whose name matches a given string.
+            </summary>
+            <typeparam name="T">Resource type.</typeparam>
+            <param name="asm">Assembly.</param>
+            <param name="resourceFile">Resource file base name.</param>
+            <param name="resourceName">Resource name (key).</param>
+            <returns>If resource not found, returns null.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.IsNumeric(System.Type)">
+            <summary>
+            Checks that a Type is a numeric type.
+            </summary>
+            <param name="type">Type to check.</param>
+            <returns>True or false.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.SetWebServiceTimeout(System.Web.Services.Protocols.WebClientProtocol,System.Int32)">
+            <summary>
+            Just like it sounds! Translation from minutes to milliseconds happens automatically.
+            </summary>
+            <param name="ws">Web Service.</param>
+            <param name="minutes">Timeout, in minutes.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.SetPrimaryKey(System.Data.DataTable,System.String,System.String[])">
+            <summary>
+            Sets up a Primary Key for the specified DataTable
+            </summary>
+            <param name="dt">DataTable that needs a primary key setup</param>
+            <param name="tableName">Name of table</param>
+            <param name="primaryKey">string[] Primary Key Fields</param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.ConvertToANSI92SQL(System.String,System.Boolean)">
+            <summary>
+            Converts wild card characters to ANSI-92 SQL characters (for example: * to %)
+            and add quotes
+            </summary>
+            <param name="val"></param>
+            <param name="upper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.HashToArray(System.Collections.Hashtable)">
+            <summary>
+            Adds quotes to in-line SQL code.
+            </summary>
+            <param name="inStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.AddQuotes(System.String,System.String)">
+            <summary>
+            Determine whether to enclose a varibale with a single quote 
+            or double quote or without quote based on the input datatype
+            </summary>
+            <param name="inputValue">Input string which is to be enclosed by quotes</param>
+            <param name="dataType">Date type of the input string</param>
+            <returns>String enclosed with quotes</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.CheckUniqueness(System.Object,System.Object)">
+            <summary>
+            This function check the occurance of a specific fields value in the string 
+            representating list of values for a specific fileds all concatenated 
+            by a delimiters.
+            </summary>
+             <param name="fieldList">Name of the filed for which this value corresponds to</param>
+            <param name="fieldValue">The value of the specific field which needs to be checked for uniqueness</param>
+            <returns>Returns true if the field value is unique</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.TrimSpecialCharacter(System.String,System.String,System.String)">
+            <summary>
+            Truncate input string from left and right side.
+            </summary>
+            <param name="inputString">Input string</param>
+            <param name="leftString">Truncate input string from left until leftString is matched</param>
+            <param name="rightString">Truncate input string from right until rightString is matched</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.TrimCharacter(System.String,System.String,System.String)">
+            <summary>
+            Truncate input string from left and right side.
+            </summary>
+            <param name="inputString">Input string</param>
+            <param name="leftString">Truncate input string from left until leftString is matched</param>
+            <param name="rightString">Truncate input string from right until rightString is matched</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.ExtractFileExtension(System.String@)">
+            <summary>
+            PURPOSE: This fnction will extract the file extension from a file name
+            </summary>
+            <param name="fileNameIn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.OracleWildCardVariableName(System.String@,System.Boolean,System.String)">
+            <summary>
+            Sets an Oracle where condition.  e.g. where field = 'abc' or where field like 'abc%'
+            </summary>
+            <param name="val">The actual value to determine using '=' or like  </param>
+            <param name="upper">Upper the value</param>
+            <param name="variableName">The name of the variable</param>
+            <returns>the where condition</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.ColChanged2(System.Object,System.Object)">
+            <summary>
+            test if two columns are changed.  empty string equals null and DBNull.Value.  byte[] are always considered not changed
+            </summary>
+            <param name="one"></param>
+            <param name="two"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.ColChanged(System.Object,System.Object)">
+            <summary>
+            test if two columns are changed.  empty string is NOT null and not DBNull.Value.  byte[] are always considered not changed
+            </summary>
+            <param name="one"></param>
+            <param name="two"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.ColChanged(System.Object,System.Object,System.Boolean)">
+            <summary>
+            test if two columns are changed.  empty string is NOT null and not DBNull.Value.  byte[] are always considered not changed
+            </summary>
+            <param name="one"></param>
+            <param name="two"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.IsEmpty(System.Object)">
+            <summary>
+            Test if object is empty.  Blank space is not empty.
+            </summary>
+            <param name="v">object</param>
+            <returns>true if object is empty</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.IsEmpty2(System.Object)">
+            <summary>
+            Test if object is empty.  Blank space is considered empty.
+            </summary>
+            <param name="v">object</param>
+            <returns>true if object is empty</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetByte(System.Object,System.Byte)">
+            <summary>
+            Returns TRUE if the given string is a valid Byte. If not, returns the default.
+            </summary>
+            <param name="string">String to check.</param>
+            <param name="default">Default value to return.</param>
+            <returns>Value of string as an Byte.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetInt32(System.Object)">
+            <summary>
+            Returns an Int value or zero if null
+            </summary>
+            <param name="colVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetUInt32(System.Object)">
+            <summary>
+            Returns an unsigned Int value or zero if null
+            </summary>
+            <param name="colVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetInt64(System.Object)">
+            <summary>
+            Returns a long value.  Return zero if null
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetUInt64(System.Object)">
+            <summary>
+            Returns unsingled long value.  Return zero if null
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetInt16(System.Object)">
+            <summary>
+            returns a short value.  Return zero if null
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetUInt16(System.Object)">
+            <summary>
+            returns unsingned short, or zero if null.
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetDoubleValue(System.Object)">
+            <summary>
+            returns a Double value.  Return zero if null
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetDateTimeValue(System.Object)">
+            <summary>
+            Returns an date or null
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.FormatBytes(System.Single)">
+            <summary>
+            Gets a string representation of bytes.
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetCultures">
+            <summary>
+            Gets all cultures available on the current system.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.SetCulture(System.String)">
+            <summary>
+            Sets the thread to a particular culture.
+            </summary>
+            <param name="cultureCode">Culture code.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.ExtractStringEnclosedBy(System.String,System.String,System.String)">
+            <summary>
+            Extract a string from an enclosed pair of char. e.g. 'Y' will return Y
+            If one of the enclosure pair is not found, the original string will be returned.
+            </summary>
+            <param name="value">The string value</param>
+            <param name="leftEnclosure">The left part of enclosure. e.g. "(" </param>
+            <param name="rightEnclosure">The right part of enclosure. e.g. ")"</param>
+            <returns>The string inside the enclosure</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.ExtractColumnNames(System.String,System.String,System.String)">
+            <summary>
+            Return a list of string for all values enclosed in the specified enclousers
+            It is used for column name extraction, thus, it removes datarowstate [colname, DataRowState] will return colname only
+            </summary>
+            <param name="expression"></param>
+            <param name="leftEnclosure"></param>
+            <param name="rightEnclosure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.ExtractParameterValues(System.String,System.String,System.String)">
+            <summary>
+            Extract a string from an enclosed pair of char. e.g. 'Y' will return Y, or equals(True) will return True
+            If one of the enclosure pair is not found, the original string will be returned.
+            </summary>
+            <param name="value">The string value</param>
+            <param name="leftEnclosure">The left part of enclosure. e.g. "(" </param>
+            <param name="rightEnclosure">The right part of enclosure. e.g. ")"</param>
+            <returns>The string inside the enclosure</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.ExtractLiteralParms(System.String,System.Object[]@)">
+            <summary>
+            Give a list of parms separated by a comma, returns the parms with proper type casted in an object array.
+            </summary>
+            <param name="parmString">e.g. '1234',455,'Levi''s Strauss', 'abc', 123.0</param>
+            <param name="parmValues">object[] '1234',455,'Levi's','abc',123.0.  Notice changing from 2 single quotes to 1 quote </param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.SplitSqlParms(System.String)">
+            <summary>
+            Splits parm string like this {PDC}='LSUS'|{BRAND}='LEVIS' into a dictionary of value pairs
+            </summary>
+            <param name="dropDownParms">the parm string</param>
+            <returns>the Dictionary of parm and value pair</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.SplitRequiredFieldParms(System.String,System.String,System.String,System.String)">
+            <summary>
+            Splits parm string like this [prod_name:ABC,EFG]|[spec_code:MINE,Yours], etc
+            </summary>
+            <param name="dropDownParms">the parm string</param>
+            <returns>the Dictionary of parm and value pair</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetRequiredFieldParms(System.String,System.String,System.String,System.String)">
+            <summary>
+            Splits parm string like this [prod_name:ABC,EFG]|[spec_code:MINE,Yours], etc
+            </summary>
+            <param name="dropDownParms">the parm string</param>
+            <returns>the Dictionary of parm and value pair</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.SplitRequiredFieldParmsList(System.String,System.String,System.String,System.String)">
+            <summary>
+             Returns a list of function arguments and their values
+            </summary>
+            <param name="dropDownParms">the parm string</param>
+            <returns>the Dictionary of arguments and List of values pair</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.SplitRequiredFieldParmsList(System.String,System.String,System.String,System.Char,System.Char)">
+            <summary>
+             Returns a Dictionary of function arguments and a List of their values
+            </summary>
+            <returns>the Dictionary of arguments and List of values pair</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetArgumentFieldsList(System.String,System.String,System.String,System.Char,System.Char)">
+            <summary>
+             Returns a list of function arguments columns
+            </summary>
+            <returns>the Dictionary of arguments and List of values pair</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.RemoveColumnError(System.Data.DataRow,System.String,System.String)">
+            <summary>
+            Resets a DataTable column error.  i.e. no more error on the column
+            </summary>
+            <param name="dr">The Data Row</param>
+            <param name="colName">The Column name</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.SetColumnError(System.Data.DataRow,System.String,System.String,System.String)">
+            <summary>
+            Appends an error message to a DataRow's Column Error Message (if any).
+            </summary>
+            <param name="dr">The Data Row</param>
+            <param name="columnName">The Column name</param>
+            <param name="columnErrorMsg">The Error Message</param>
+            <param name="bizEntityName">Business entity name, for proper formatting.</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.UpdateCurrentErrorMessage(System.Data.DataRow,System.String,System.String,System.String,System.String)">
+            <summary>
+            Replaces specific keyed error message w. a new one
+            </summary>
+            <param name="dr"></param>
+            <param name="columnName"></param>
+            <param name="currentError">current column error</param>
+            <param name="colErrorToProcess">the new error message</param>
+            <param name="key">the new error message unique key</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.DataChanged(System.Data.DataRow,System.String)">
+            <summary>
+            return True if a column in a DataRow is changed (from the original value)
+            </summary>
+            <param name="dr"></param>
+            <param name="colName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.ExtractCodesFromList(System.String,System.String@,System.String[]@)">
+            <summary>
+            Extra codes from a list
+            </summary>
+            <param name="inList">string in format: desc1(code1), desc2(code2)...</param>
+            <param name="codeList">Returns a list in this format: 'code1','code2'...</param>
+            <param name="codes">Returns a string array like this: array[0] = 'code1', array[1] = 'code2'...</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.ExtractCodesFromList(System.String,System.String[]@,System.String[]@)">
+            <summary>
+            Extra codes from a list
+            </summary>
+            <param name="inList">string in format: description1(code1), description2(code2)...</param>
+            <param name="descList">Returns a list in this format: array[0] = description1, array[1] = description2...</param>
+            <param name="valueList">Returns a string array like this: array[0] = code1, array[1] = code2...</param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.Translate(System.Collections.Hashtable,System.String,System.Object[])">
+            <summary>
+            Translate a value to another.  Using same syntax similar the Oracle's Decode function
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.CopyHashtableItems(System.Collections.Hashtable,System.Collections.Hashtable,System.String[],System.String[])">
+            <summary>
+            Copy from one hashtable to another the fromKeys fields and also renamed the field names with the corresponding toKeys fields
+            </summary>
+            <param name="source"></param>
+            <param name="target"></param>
+            <param name="sourceKeys"></param>
+            <param name="targetKeys"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.AddValueToList(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Not very efficient... use with care.
+            </summary>
+            <param name="list"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.GetDataRowView(System.Data.DataRow)">
+            <summary>
+            Get the Default Views DataRowView for a DataRow
+            </summary>
+            <param name="dr">The DataRow</param>
+            <returns>The DataRowView, else null if doesn't exist</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.MergeDataTable(System.Data.DataTable,System.Data.DataTable)">
+            <summary>
+            Combine new DataTable to existing Datable both the column and Data.
+            Note primary Keys of dtNewData will not be merged.
+            
+            </summary>
+            <param name="DataSourceDataTable"></param>
+            <param name="dtColData"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.CopyErrors(System.Data.DataRow,System.Data.DataRow)">
+            <summary>
+            Copies both DataRow and Cell errors from one DataRow to another
+            </summary>
+            <param name="originalDataRow"></param>
+            <param name="dataRowCopy"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.Utility.AssignColumnWOChange(System.Data.DataRow,System.String,System.Object)">
+            <summary>
+            Assign a DataRow column value without marking the column as change (Original and Current value will be the same) when a row 
+            was Modified.  Otherwise a normal assignment will take place.
+            </summary>
+            <param name="dr"></param>
+            <param name="colName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:KCS.Common.Shared.Utility.NumericTypes">
+            <summary>
+            Contains the list of numeric types.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API">
+            <summary>
+            Struct for various Win32 API types and constants.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Messages.Paint">
+            <summary>
+            W_PAINT
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Messages.Cut">
+            <summary>
+            WM_CUT
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Messages.Copy">
+            <summary>
+            WM_COPY
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Messages.Paste">
+            <summary>
+            WM_PASTE
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API.Mpr">
+            <summary>
+            Class for various functions in Mpr.dll
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Mpr.CONNECT_UPDATE_PROFILE">
+            <summary>
+            If this flag is set, the operating system is instructed to remember the mapping of the drive
+            letter in the user's profile. This means that if the user logs off, when they log on again
+            at a later date, an attempt to restore the connection will be made.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Mpr.CONNECT_INTERACTIVE">
+            <summary>
+            When this flag is set, the operating system is permitted to ask the user for authentication
+            information before attempting to map the drive letter.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Mpr.CONNECT_PROMPT">
+            <summary>
+            When set, this flag indicates that any default user name and password credentials will not
+            be used without first giving the user the opportunity to override them. This flag is ignored
+            if CONNECT_INTERACTIVE is not also specified.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Mpr.CONNECT_REDIRECT">
+            <summary>
+            This flag forces the redirection of a local device when making the connection. For the
+            functionality described in this article the flag has no effect. It is included here for
+            completeness.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Mpr.CONNECT_COMMANDLINE">
+            <summary>
+            This flag indicates that if the operating system needs to ask for a user name and password,
+            it should do so using the command line rather than by using dialog boxes. This flag is
+            ignored if CONNECT_INTERACTIVE is not also specified. It is not available to Windows 2000 or
+            earlier versions of the operating system.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Mpr.CONNECT_CMD_SAVECRED">
+            <summary>
+            If set, this flag specifies that any credentials entered by the user will be saved. If it
+            is not possible to save the credentials or the CONNECT_INTERACTIVE is not also specified then
+            the flag is ignored.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API.IMalloc">
+            <summary>
+            C# representation of the IMalloc interface.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.IMalloc.Alloc(System.Int32)">
+            <summary>
+            Alloc.
+            </summary>
+            <param name="cb"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.IMalloc.Realloc(System.IntPtr,System.Int32)">
+            <summary>
+            Realloc.
+            </summary>
+            <param name="pv"></param>
+            <param name="cb"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.IMalloc.Free(System.IntPtr)">
+            <summary>
+            Free.
+            </summary>
+            <param name="pv"></param>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.IMalloc.GetSize(System.IntPtr)">
+            <summary>
+            GetSize.
+            </summary>
+            <param name="pv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.IMalloc.DidAlloc(System.IntPtr)">
+            <summary>
+            DidAlloc.
+            </summary>
+            <param name="pv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.IMalloc.HeapMinimize">
+            <summary>
+            HeapMinimize.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API.User32">
+            <summary>
+            Class for various functions in User32.dll
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.User32.GetActiveWindow">
+            <summary>
+            GetActiveWindow.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.User32.FindWindowByCaption(System.IntPtr,System.String)">
+            <summary>
+            FindWindowByCaption
+            </summary>
+            <param name="ZeroOnly"></param>
+            <param name="lpWindowName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.User32.GetShellWindow">
+            <summary>
+            GetShellWindow,
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API.User32.LASTINPUTINFO">
+            <summary>
+            Used for GetLastInputInfo.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API.Shlwapi">
+            <summary>
+            Class for various functions in Shlwapi.dll
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API.Shell32">
+            <summary>
+            Class for various functions in Shell32.dll
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.Shell32.SHFileOperation(KCS.Common.Shared.Win32API.Shell32.SHFILEOPSTRUCT@)">
+            <summary>
+            Performs a file operation using the Shell functions.
+            </summary>
+            <param name="lpFileOp">Pointer to SHFILEOPSTRUCT structure.</param>
+            <returns>Error code.</returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.Shell32.SHGetMalloc(KCS.Common.Shared.Win32API.IMalloc@)">
+            <summary>
+            SHGetMalloc.
+            </summary>
+            <param name="ppMalloc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.Shell32.SHGetSpecialFolderLocation(System.IntPtr,System.Int32,System.IntPtr@)">
+            <summary>
+            SHGetSpecialFolderLocation.
+            </summary>
+            <param name="hwndOwner"></param>
+            <param name="nFolder"></param>
+            <param name="ppidl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.Shell32.SHGetPathFromIDList(System.IntPtr,System.Text.StringBuilder)">
+            <summary>
+            SHGetPathFromIDList
+            </summary>
+            <param name="pidl"></param>
+            <param name="Path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.Shell32.SHBrowseForFolder(KCS.Common.Shared.Win32API.Shell32.BROWSEINFO@)">
+            <summary>
+            SHBrowseForFolder.
+            </summary>
+            <param name="bi"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API.Shell32.SHFILEOPSTRUCT">
+            <summary>
+            SHFILEOPSTRUCT
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEOPSTRUCT.hwnd">
+            <summary>
+            Window handle.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEOPSTRUCT.wFunc">
+            <summary>
+            wFunc.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEOPSTRUCT.pFrom">
+            <summary>
+            Source path.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEOPSTRUCT.pTo">
+            <summary>
+            Destination path.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEOPSTRUCT.fFlags">
+            <summary>
+            Flags.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEOPSTRUCT.fAnyOperationsAborted">
+            <summary>
+            Was opertaion aborted?
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEOPSTRUCT.hNameMappings">
+            <summary>
+            Name mappings.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEOPSTRUCT.lpszProgressTitle">
+            <summary>
+            Title of progress bar.
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API.Shell32.SHFILEINFO">
+            <summary>
+            SHFILEINFO.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEINFO.hIcon">
+            <summary>
+            Icon handle.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEINFO.iIcon">
+            <summary>
+            Icon index.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEINFO.dwAttributes">
+            <summary>
+            Attributes.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEINFO.szDisplayName">
+            <summary>
+            Display name.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.SHFILEINFO.szTypeName">
+            <summary>
+            Document type name.
+            </summary>
+        </member>
+        <member name="M:KCS.Common.Shared.Win32API.Shell32.SHFILEINFO.#ctor(System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="dummy">Dummy parameter</param>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API.Shell32.BffStyles">
+            <summary>
+            Styles used in the BROWSEINFO.ulFlags field.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BffStyles.RestrictToFilesystem">
+            <summary>
+            BIF_RETURNONLYFSDIRS
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BffStyles.RestrictToDomain">
+            <summary>
+            BIF_DONTGOBELOWDOMAIN
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BffStyles.RestrictToSubfolders">
+            <summary>
+            BIF_RETURNFSANCESTORS
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BffStyles.ShowTextBox">
+            <summary>
+            BIF_EDITBOX
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BffStyles.ValidateSelection">
+            <summary>
+            BIF_VALIDATE
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BffStyles.NewDialogStyle">
+            <summary>
+            BIF_NEWDIALOGSTYLE
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BffStyles.BrowseForComputer">
+            <summary>
+            BIF_BROWSEFORCOMPUTER
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BffStyles.BrowseForPrinter">
+            <summary>
+            BIF_BROWSEFORPRINTER
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BffStyles.BrowseForEverything">
+            <summary>
+            BIF_BROWSEINCLUDEFILES
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API.Shell32.BFFCALLBACK">
+            <summary>
+            Delegate type used in BROWSEINFO.lpfn field. 
+            </summary>
+        </member>
+        <member name="T:KCS.Common.Shared.Win32API.Shell32.BROWSEINFO">
+            <summary>
+            BROWSEINFO.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BROWSEINFO.hwndOwner">
+            <summary>
+            Handle of owner window.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BROWSEINFO.pidlRoot">
+            <summary>
+            ID of root folder.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BROWSEINFO.pszDisplayName">
+            <summary>
+            Display name.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BROWSEINFO.lpszTitle">
+            <summary>
+            Dialog title.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BROWSEINFO.ulFlags">
+            <summary>
+            Flags.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BROWSEINFO.lpfn">
+            <summary>
+            Callback function pointer.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BROWSEINFO.lParam">
+            <summary>
+            lParam.
+            </summary>
+        </member>
+        <member name="F:KCS.Common.Shared.Win32API.Shell32.BROWSEINFO.iImage">
+            <summary>
+            Image.
+            </summary>
+        </member>
+    </members>
+</doc>

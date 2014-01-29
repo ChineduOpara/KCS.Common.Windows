@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KCS.Common.Controls.ValuesTracker">
+    <Position X="1.75" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAAAAICFIAHAhAwAQwAqAIHCBIgABIAAEAAAAClABAA=</HashCode>
+      <FileName>Other\ValuesTracker\ValuesTracker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KCS.Common.Controls.CollapsiblePanel">
+    <Position X="6.75" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQCAgSAAIAIABBACICJACEAWQIARIAIEMACAAAshBCA=</HashCode>
+      <FileName>Panels\CollapsiblePanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
