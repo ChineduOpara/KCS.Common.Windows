@@ -103,9 +103,16 @@ namespace KCS.Common.Controls
         /// <param name="e"></param>
         protected virtual void ApplicationIdle(object sender, EventArgs e)
         {
-            tsProgressBar.Visible = IsBusy;
+            if (tsProgressBar != null)
+            {
+                tsProgressBar.Visible = IsBusy;
+            }
         }
 
+        /// <summary>
+        /// Raised when the form paints for the first time.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -151,7 +158,6 @@ namespace KCS.Common.Controls
             IsBusy = busy;
             this.UseWaitCursor = busy;
             Application.DoEvents();
-            //Shared.Win32API.User32.LockWindowUpdate(busy ? this.Handle : IntPtr.Zero);
         }
 
         protected override void OnClosing(CancelEventArgs e)

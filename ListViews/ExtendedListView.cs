@@ -551,7 +551,7 @@ namespace KCS.Common.Controls
                     graphics.DrawString(textToDisplay, font, brush, point, sf);
                 }
             }
-            catch (System.Exception ex)
+            catch// (/*System.Exception ex*/)
             {
 				//throw ex;
             }

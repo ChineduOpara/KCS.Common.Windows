@@ -13,7 +13,7 @@ namespace KCS.Common.Controls
 	/// <summary>
 	/// Supports color-syntax highliting.
 	/// </summary>
-	public class CSHTextBox : System.Windows.Forms.RichTextBox
+	public class KCSRichTextBox : System.Windows.Forms.RichTextBox
 	{
 		/// <summary>
 		/// Helper class.
@@ -58,6 +58,7 @@ namespace KCS.Common.Controls
 		private Timer tmr;
 		private IContainer components;
 		private bool _hasTextChanged = false;
+        private string _language = string.Empty;
 
 		/// <summary>
 		/// Raised just before highliting starts.
@@ -82,13 +83,22 @@ namespace KCS.Common.Controls
 		{
 			get;
 			set;
-		}		
+		}
+
+        public string Language
+        {
+            get { return _language; }
+            set
+            {
+                // Attempt to load the appropriate language
+            }
+        }
 		#endregion
 
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		public CSHTextBox()
+		public KCSRichTextBox()
 		{
 			InitializeComponent();
 			EnableSyntaxHighliting = true;
@@ -104,7 +114,7 @@ namespace KCS.Common.Controls
 		/// <param name="color"></param>
 		public void AddDefinition(string name, string tokens, char delimiter, bool useWordBoundary, Color color)
 		{
-			HighlitingDefinition hd = new HighlitingDefinition(tokens, delimiter, useWordBoundary, color);
+			var hd = new HighlitingDefinition(tokens, delimiter, useWordBoundary, color);
 			hd.Name = name;
 			_definitions.Add(hd);
 		}

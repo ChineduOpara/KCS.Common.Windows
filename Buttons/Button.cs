@@ -12,7 +12,7 @@ namespace KCS.Common.Controls
     {
         private string _Text;
         private short _TextAngle = 0;
-        public static Size DefaultSize = new Size(100, 30);
+        public new static Size DefaultSize = new Size(100, 30);
 
         /// <summary>
         /// Gets or sets the angle at which the Text will be rendered.

@@ -164,7 +164,7 @@
     <Compile Include="Other\SmoothProgressBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RichTextBoxes\CSHTextBox.cs">
+    <Compile Include="RichTextBoxes\KCSRichTextBox\KCSRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="TextBoxes\KCSTextBox.cs">
@@ -179,13 +179,16 @@
     <Compile Include="ToolStripItems\CheckBoxToolStripItem.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ToolStripItems\KCSToolStripTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ToolStripItems\HistoryToolStripComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ToolStripItems\KCSToolStripComboBox.cs">
+    <Compile Include="ToolStripItems\ToolStripComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ToolStripItems\KCSToolStripDropDownButton.cs">
+    <Compile Include="ToolStripItems\ToolStripDropDownButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ToolStripItems\NumericToolStripTextBox.cs">
@@ -248,14 +251,17 @@
       <DependentUpon>AsynProgressBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ControlIcons\System.Windows.Forms.SplitContainer.bmp" />
-    <EmbeddedResource Include="RichTextBoxes\CSHTextBox.resx">
-      <DependentUpon>CSHTextBox.cs</DependentUpon>
+    <EmbeddedResource Include="RichTextBoxes\KCSRichTextBox\KCSRichTextBox.resx">
+      <DependentUpon>KCSRichTextBox.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\New.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="RichTextBoxes\KCSRichTextBox\Languages.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="Resources\ArrowUp.png" />
     <None Include="Resources\ArrowDown.png" />
     <None Include="Resources\ArrowLeft.png" />
@@ -284,7 +290,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KCS.Common.Shared\KCS.Common.Shared.csproj">
-      <Project>{B733DC70-1296-4CFB-98DF-4703D3727AB0}</Project>
+      <Project>{b733dc70-1296-4cfb-98df-4703d3727ab0}</Project>
       <Name>KCS.Common.Shared</Name>
     </ProjectReference>
   </ItemGroup>

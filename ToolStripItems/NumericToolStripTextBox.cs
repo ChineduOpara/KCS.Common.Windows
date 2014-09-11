@@ -13,7 +13,7 @@ namespace KCS.Common.Controls
     /// Textbox that allows only numeric values.
     /// </summary>
     [DefaultEvent("TextChanged")]
-    public class NumericToolStripTextBox : ToolStripTextBox
+    public class NumericToolStripTextBox : KCSToolStripTextBox
     {
         private string _PreviousText;
         private static NumberFormatInfo _nfi = Thread.CurrentThread.CurrentUICulture.NumberFormat;

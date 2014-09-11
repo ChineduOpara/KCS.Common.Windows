@@ -51,35 +51,25 @@ namespace KCS.Common.Controls
             set;
         }
 
-        /// <summary>
-        /// If TRUE, the control raises the SelectedIndexChanged event.
-        /// </summary>
-        [
-            Category("Behavior"),
-            DefaultValue(true),
-            Description("If TRUE, the toolStripItem raises the SelectedIndexChanged event.")
-        ]
-        public bool RaiseSelectedIndexChangedEvent { get; set; }
+        //[
+        //    Category("Data"),
+        //    Description("Gets or sets the property to display.")
+        //]
+        //public override string DisplayMember
+        //{
+        //    get { return base.ComboBox.DisplayMember; }
+        //    set { base.ComboBox.DisplayMember = value; }
+        //}
 
-        [
-            Category("Data"),
-            Description("Gets or sets the property to display.")
-        ]
-        public string DisplayMember
-        {
-            get { return base.ComboBox.DisplayMember; }
-            set { base.ComboBox.DisplayMember = value; }
-        }
-
-        [
-            Category("Data"),
-            Description("Gets or sets the property to use as the actual value.")
-        ]
-        public string ValueMember
-        {
-            get { return base.ComboBox.ValueMember; }
-            set { base.ComboBox.ValueMember = value; }
-        }
+        //[
+        //    Category("Data"),
+        //    Description("Gets or sets the property to use as the actual value.")
+        //]
+        //public override string ValueMember
+        //{
+        //    get { return base.ComboBox.ValueMember; }
+        //    set { base.ComboBox.ValueMember = value; }
+        //}
 
         /// <summary>
         /// Constructor. Sets some default property values.
@@ -166,10 +156,10 @@ namespace KCS.Common.Controls
             {
                 string txt = Text.Trim();
 
-                // We can't use Contains, because it is case-sensitive. So do a hardcore loop.
+                // We can't use Contains, because it is case-sensitive. So do an old-school loop.
                 foreach (string item in Items)
                 {
-                    found = string.Compare(item, txt, true) == 0;
+                    found = string.Compare(item.Trim(), txt, true) == 0;
                     if (found)
                     {
                         break;

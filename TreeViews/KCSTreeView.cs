@@ -65,7 +65,7 @@ namespace KCS.Common.Controls
         /// <param name="parent"></param>
         /// <param name="checkedFlag"></param>
         /// <param name="includeNested"></param>
-        public void CheckAll(TreeNode parent, bool checkedFlag, bool includeNested = false)
+        public void CheckAll(TreeNode parent = null, bool checkedFlag = true, bool includeNested = false)
         {
             TreeNodeCollection nodes = parent == null ? this.Nodes : parent.Nodes;
 
@@ -108,13 +108,60 @@ namespace KCS.Common.Controls
         //}
 
         /// <summary>
+        /// Gets the count of nodes, through all levels.
+        /// </summary>
+        /// <returns></returns>
+        public int GetNodeCount(TreeNodeCollection nodes = null)
+        {
+            int count = 0;
+
+            if (nodes == null)
+            {
+                nodes = this.Nodes;
+            }
+
+            count = nodes.Count;
+
+            foreach (TreeNode node in nodes)
+            {
+                count += GetNodeCount(node.Nodes);
+            }
+
+            return count;
+        }
+
+        /// <summary>
+        /// Gets the count of checked nodes, through all levels.
+        /// </summary>
+        /// <returns></returns>
+        public int GetCheckedNodeCount(TreeNodeCollection nodes = null)
+        {
+            int count = 0;
+
+            if (nodes == null)
+            {
+                nodes = this.Nodes;
+            }
+
+            foreach (TreeNode node in nodes)
+            {
+                if (node.Checked)
+                {
+                    count++;
+                }
+                count += GetCheckedNodeCount(node.Nodes);
+            }
+
+            return count;
+        }
+
+        /// <summary>
         /// Gets all checked nodes, through all levels.
         /// </summary>
-        /// <param name="checkedFlag"></param>
         /// <returns></returns>
         public IEnumerable<TreeNode> GetCheckedNodes(TreeNodeCollection nodes = null)
         {
-            List<TreeNode> list = new List<TreeNode>();
+            var list = new List<TreeNode>();
 
             if (nodes == null)
             {
@@ -128,6 +175,91 @@ namespace KCS.Common.Controls
                     list.Add(node);
                 }
                 foreach (TreeNode innerNode in GetCheckedNodes(node.Nodes))
+                {
+                    list.Add(innerNode);
+                }
+            }
+
+            return list;
+        }
+
+        /// <summary>
+        /// Gets all checked nodes, through all levels.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<T> GetCheckedNodes<T>(TreeNodeCollection nodes = null)
+        {
+            var list = new List<T>();
+
+            if (nodes == null)
+            {
+                nodes = this.Nodes;
+            }
+
+            foreach (TreeNode node in nodes)
+            {
+                if (node.Checked && node.Tag != null && node.Tag is T)
+                {
+                    list.Add((T)node.Tag);
+                }
+                foreach (TreeNode innerNode in GetCheckedNodes(node.Nodes))
+                {
+                    list.Add((T)innerNode.Tag);
+                }
+            }
+
+            return list;
+        }
+
+        public bool IsAnyCheckedNodeOfType<T>(TreeNodeCollection nodes = null)
+        {
+            if (nodes == null)
+            {
+                nodes = this.Nodes;
+            }
+
+            bool found = false;
+            foreach (TreeNode node in nodes)
+            {
+                if (node.Checked)
+                {
+                    if (node.Tag != null && node.Tag is T)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                {
+                    found = IsAnyCheckedNodeOfType<T>(node.Nodes);
+                    if (found)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return found;
+        }
+
+        /// <summary>
+        /// Gets all nodes, through all levels (basically a flattened list).
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<TreeNode> GetNodes(TreeNodeCollection nodes = null)
+        {
+            var list = new List<TreeNode>();
+
+            if (nodes == null)
+            {
+                nodes = this.Nodes;
+            }
+
+            foreach (TreeNode node in nodes)
+            {
+                list.Add(node);
+                foreach (TreeNode innerNode in GetNodes(node.Nodes))
                 {
                     list.Add(innerNode);
                 }

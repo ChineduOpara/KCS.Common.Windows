@@ -8,7 +8,7 @@ namespace KCS.Common.Controls
     /// Extends the ToolStripComboBox, allowing control of the SelectedIndexChanged event.
     /// </summary>
     [DefaultEvent("SelectedIndexChangedEvent")]
-    public class KCSToolStripComboBox : ToolStripComboBox
+    public class ToolStripComboBox : System.Windows.Forms.ToolStripComboBox
     {
         /// <summary>
         /// If TRUE, the control raises the SelectedIndexChanged event.
@@ -43,7 +43,7 @@ namespace KCS.Common.Controls
         /// <summary>
         /// Constructor. Sets some default property values.
         /// </summary>
-        public KCSToolStripComboBox()
+        public ToolStripComboBox()
         {
             RaiseSelectedIndexChangedEvent = true;
         }

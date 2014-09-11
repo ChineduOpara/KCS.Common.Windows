@@ -93,7 +93,7 @@ namespace KCS.Common.Controls
 
         protected ExtendedPanel pnlMain;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripProgressBar tsProgressBar;
+        protected System.Windows.Forms.ToolStripProgressBar tsProgressBar;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
 
     }

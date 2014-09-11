@@ -8,7 +8,7 @@ namespace KCS.Common.Controls
     /// <summary>
     /// Adds auto-dropdown functionality to the base ToolStripDropDownButton.
     /// </summary>
-    public class KCSToolStripDropDownButton : ToolStripDropDownButton
+    public class ToolStripDropDownButton : System.Windows.Forms.ToolStripDropDownButton
     {
         /// <summary>
         /// When the mouse hovers over the control, immediately dropdown the items.

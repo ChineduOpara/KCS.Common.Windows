@@ -7,8 +7,8 @@ namespace KCS.Common.Controls
 {
     public class MenuRenderer : ToolStripRenderer
     {
-        private SolidBrush _backBrush;
-        private SolidBrush _highlightBrush;
+        //private SolidBrush _backBrush;
+        //private SolidBrush _highlightBrush;
         public Color BackColor { get; private set; }
 
         public MenuRenderer() : base()

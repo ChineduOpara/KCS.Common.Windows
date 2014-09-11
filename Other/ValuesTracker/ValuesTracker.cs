@@ -950,10 +950,13 @@ namespace KCS.Common.Controls
         /// <summary> 
         /// Clears all the values and adds the default values.
         /// </summary>
-        public void Clear()
+        public void Clear(bool addDefaultValues = true)
         {
             Dictionary.Clear();
-            AddDefaultvalues();
+            if (addDefaultValues)
+            {
+                AddDefaultvalues();
+            }
         }
 
 		/// <summary> 
@@ -963,9 +966,9 @@ namespace KCS.Common.Controls
 		{
 			try
 			{
-				IsolatedStorageFile ifs = IsolatedStorageFile.GetUserStoreForAssembly();
+				var ifs = IsolatedStorageFile.GetUserStoreForAssembly();
 				
-				string[] files = ifs.GetFileNames("*.*");
+				var files = ifs.GetFileNames("*.*");
 				if (files.Contains(StorageKey))
 				{
 					ifs.DeleteFile(StorageKey);

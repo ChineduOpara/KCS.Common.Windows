@@ -205,8 +205,8 @@ namespace KCS.Common.Controls
 		#endregion		
 
 		#region Events
-        [Category("Action"), Description("Occurs when the user begins dragging a row.")]
-        public event ItemDragEventHandler BeginRowDrag;
+        //[Category("Action"), Description("Occurs when the user begins dragging a row.")]
+        //public event ItemDragEventHandler BeginRowDrag;
 
 		/// <summary>
 		/// Raised when a row is clicked.
@@ -331,15 +331,14 @@ namespace KCS.Common.Controls
         /// <returns>Rows.</returns>
         public IEnumerable<DataGridViewRow> GetVisibleRows()
         {
-            List<DataGridViewRow> list = new List<DataGridViewRow>(1);
+            var list = new List<DataGridViewRow>(1);
             if (FirstDisplayedCell == null)
             {
-                return list;                
+                yield return null;                
             }
 
             int rowIndex = FirstDisplayedCell.RowIndex;
             list.Add(FirstDisplayedCell.OwningRow);
-            bool isRowDisplayed = false;
             DataGridViewRow dgvr = Rows[rowIndex];
 
             while (rowIndex < Rows.Count && dgvr.Displayed)
@@ -347,11 +346,12 @@ namespace KCS.Common.Controls
                 dgvr = Rows[rowIndex++];
                 if (dgvr.Displayed)
                 {
-                    list.Add(dgvr);
+                    yield return dgvr;
+                    //list.Add(dgvr);
                 }
             }
 
-            return list;
+            //return list;
         }
 
         public List<DataGridViewRow> GetSelectedRows()
@@ -1280,6 +1280,10 @@ namespace KCS.Common.Controls
         /// <param name="e"></param>
         protected override void OnCellValidated(DataGridViewCellEventArgs e)
         {
+            if (ReadOnly)
+            {
+                return;
+            }
             base.OnCellValidated(e);
             
             DataGridViewCell cell = this[e.ColumnIndex, e.RowIndex];

@@ -18,7 +18,7 @@ namespace KCS.Common.Controls
 		public bool Enabled { get; set; }
 
         /// <summary>
-        /// Is the node checked?
+        /// Can node be checked/unchecked?
         /// </summary>
         [
             DefaultValue(true),
@@ -47,6 +47,14 @@ namespace KCS.Common.Controls
         public KCSTreeNode(string text) : this()
         {
             base.Text = text;
+        }
+
+        public void CheckChildren(bool @checked)
+        {
+            foreach (TreeNode tn in Nodes)
+            {
+                tn.Checked = @checked;
+            }
         }
 	}
 }
