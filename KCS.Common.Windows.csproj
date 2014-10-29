@@ -89,8 +89,14 @@
     <Compile Include="KCSBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KCSBaseForm.designer.cs">
+    <Compile Include="KCSBaseForm.Designer.cs">
       <DependentUpon>KCSBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KCSBaseMDIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KCSBaseMDIForm.designer.cs">
+      <DependentUpon>KCSBaseMDIForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Buttons\Button.cs">
       <SubType>Component</SubType>
@@ -202,6 +208,9 @@
   <ItemGroup>
     <EmbeddedResource Include="KCSBaseForm.resx">
       <DependentUpon>KCSBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KCSBaseMDIForm.resx">
+      <DependentUpon>KCSBaseMDIForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListViews\ExtendedListView.resx">
       <DependentUpon>ExtendedListView.cs</DependentUpon>
