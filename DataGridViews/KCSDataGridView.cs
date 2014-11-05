@@ -65,6 +65,14 @@ namespace KCS.Common.Controls
         }
 
 		#region Other Properties
+        ///// <summary>
+        ///// Enables or disables cell validation.
+        ///// </summary>
+        //[
+        //    Description("Enables or disables cell validation."), Category("Focus")
+        //]
+        //public bool EnableCellValidation { get; set; }
+
         /// <summary>
         /// Gets or sets the color that's used to indicate a changed or added row.
         /// </summary>
@@ -1280,7 +1288,7 @@ namespace KCS.Common.Controls
         /// <param name="e"></param>
         protected override void OnCellValidated(DataGridViewCellEventArgs e)
         {
-            if (ReadOnly)
+            if (ReadOnly || !CausesValidation)
             {
                 return;
             }
