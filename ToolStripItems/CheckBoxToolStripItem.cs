@@ -18,7 +18,7 @@ namespace KCS.Common.Controls
     public class CheckBoxToolStripItem : ToolStripControlHost
     {
         private FlowLayoutPanel _Panel;
-        private CheckBox _CheckBox = new CheckBox();
+        private CheckBox _checkBox = new CheckBox();
 
         /// <summary>
         /// Raised when the Checked property changes.
@@ -42,6 +42,25 @@ namespace KCS.Common.Controls
             set
             {
                 CheckBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the CheckBox FlatStyle.
+        /// </summary>
+        [
+            Browsable(true),
+            Category("Appearance")
+        ]
+        public FlatStyle FlatStyle
+        {
+            get
+            {
+                return CheckBox.FlatStyle;
+            }
+            set
+            {
+                CheckBox.FlatStyle = value;
             }
         }
 
@@ -72,7 +91,7 @@ namespace KCS.Common.Controls
         {
             get
             {
-                return _CheckBox;
+                return _checkBox;
             }
         }
         #endregion
@@ -84,18 +103,19 @@ namespace KCS.Common.Controls
         {
             AutoSize = true;
 
-            _CheckBox.AutoSize = true;
-            _CheckBox.Dock = DockStyle.Fill;
-            _CheckBox.CheckAlign = ContentAlignment.MiddleLeft;
-            _CheckBox.TextAlign = ContentAlignment.MiddleCenter;
-            _CheckBox.CheckedChanged += new EventHandler(CheckBoxCheckedChanged);
+            _checkBox.AutoSize = true;
+            _checkBox.FlatStyle = FlatStyle.Popup;
+            _checkBox.Dock = DockStyle.Fill;
+            _checkBox.CheckAlign = ContentAlignment.MiddleLeft;
+            _checkBox.TextAlign = ContentAlignment.MiddleCenter;
+            _checkBox.CheckedChanged += new EventHandler(CheckBoxCheckedChanged);
 
             // Set up flow layout panel
             _Panel = (FlowLayoutPanel)base.Control;
             _Panel.BackColor = Color.Transparent;            
 
             // Add the checkbox
-            _Panel.Controls.Add(_CheckBox);
+            _Panel.Controls.Add(_checkBox);
         }
 
         /// <summary>

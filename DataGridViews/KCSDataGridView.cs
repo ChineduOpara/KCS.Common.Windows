@@ -312,6 +312,13 @@ namespace KCS.Common.Controls
 
         public List<DataGridViewColumnGroup> ColumnGroups{ get; private set;}
 
+        public void AutoSizeHeight()
+        {
+            var totalHeight = (ColumnHeadersVisible ? ColumnHeadersHeight : 0);
+            totalHeight += Rows.OfType<DataGridViewRow>().Where(r => r.Visible).Sum(r => r.Height);
+            this.Height = totalHeight;
+        }
+
         /// <summary>
         /// Clean up.
         /// </summary>
