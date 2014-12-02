@@ -29,8 +29,8 @@ namespace KCS.Common.Controls
         /// <summary>
         /// If set, the OK button is always the form's Accept button.
         /// </summary>
-        [Category("Appearance"), Description("Gets or sets the width of the Accept button.")]
-        public int AcceptButtonWidth
+        [Category("Layout"), Description("Gets or sets the width of the OK button.")]
+        public int OKButtonWidth
         {
             get { return _btnOK.Width; }
             set { _btnOK.Width = value; }
