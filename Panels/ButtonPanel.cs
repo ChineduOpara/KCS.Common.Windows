@@ -516,9 +516,10 @@ namespace KCS.Common.Controls
 				// If AutoCloseForm is set to true, then always close the top-level form.
 				// This is redundant for forms opened with ShowDialog(), but it is necessary for
 				// non-modal forms.
-				if (AutoCloseForm && ((Form)TopLevelControl) != null)
+				if (AutoCloseForm)
 				{
-					((Form)TopLevelControl).Close();
+                    var form = this.FindForm();
+                    form.Close();
 				}
 			}			
 		}
