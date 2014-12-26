@@ -186,7 +186,7 @@ namespace KCS.Common.Controls
 				}
 				else
 				{
-					StorageKey = _ownerForm.GetType().Name;
+					StorageKey = _ownerForm.GetType().FullName;
 
 					// At runtime, subscribe to the Form's events.
 					SubscribeToEventHandlers();
