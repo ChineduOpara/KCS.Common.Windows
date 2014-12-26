@@ -612,10 +612,15 @@ namespace KCS.Common.Controls
             int intersections = 0;
 			int intersectMargin = 100;
 
-            Form.Top = GetValue(Shared.Constants.FormProperties.Top, Form.Top);
-			Form.Left = GetValue(Shared.Constants.FormProperties.Left, Form.Left);
-			Form.Width = GetValue(Shared.Constants.FormProperties.Width, Form.Width);
-			Form.Height = GetValue(Shared.Constants.FormProperties.Height, Form.Height);
+            var top = GetValue(Shared.Constants.FormProperties.Top, Form.Top);
+            var left = GetValue(Shared.Constants.FormProperties.Left, Form.Left);
+            var width = GetValue(Shared.Constants.FormProperties.Width, Form.Width);
+            var height = GetValue(Shared.Constants.FormProperties.Height, Form.Height);
+
+            Form.Top = top;
+			Form.Left = left;
+			Form.Width = width;
+			Form.Height = height;
 
             formBounds = new Rectangle(Form.Location, Form.Size);
 			formBounds.Inflate(-intersectMargin, -intersectMargin);
