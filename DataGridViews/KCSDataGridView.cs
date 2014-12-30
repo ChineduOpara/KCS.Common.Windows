@@ -6,8 +6,9 @@ using System.Linq;
 using System.ComponentModel;
 using System.Data;
 using KCS.Common.Shared;
-using Shared = KCS.Common.Shared;
 using System.Windows.Forms;
+using Shared = KCS.Common.Shared;
+using Components = System.ComponentModel;
 
 namespace KCS.Common.Controls
 {
@@ -638,7 +639,7 @@ namespace KCS.Common.Controls
 			// Raise event
 			if (DataCopying != null)
 			{
-				CancelEventArgs args = new CancelEventArgs();
+				var args = new Components.CancelEventArgs();
 				DataCopying(this, args);
 				if (args.Cancel)
 				{
@@ -753,7 +754,7 @@ namespace KCS.Common.Controls
 			DataGridViewColumn col;
 			DataRowView drvTarget;
 			DataGridViewRow dgrv;
-			CancelEventArgs args = new CancelEventArgs();
+            var args = new Components.CancelEventArgs();
 			DataTable copiedData = CopiedData == null ? null : this.CopiedData;
 			//string clipBoardText = string.Empty;
 

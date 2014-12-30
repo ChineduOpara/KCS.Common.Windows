@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using KCS.Common.Shared;
+using Shared = KCS.Common.Shared;
 
 namespace KCS.Common.Controls
 {
@@ -57,9 +58,9 @@ namespace KCS.Common.Controls
 			}
 
 			_uniqueName = this.GetFullyQualifiedName();
-			ValuesTracker vt = new ValuesTracker(_uniqueName);
+			var vt = new Shared.ValuesTracker(_uniqueName);
 			vt.Load();
-			List<string> history = vt.GetValue<List<string>>(ValueKey, new List<string>());
+			var history = vt.GetValue<List<string>>(ValueKey, new List<string>());
 
 			Items.AddRange(history.ToArray());
 		}
@@ -72,8 +73,8 @@ namespace KCS.Common.Controls
 		{
 			if (!DesignMode)
 			{
-				ValuesTracker vt = new ValuesTracker(_uniqueName);
-				List<string> history = new List<string>(Items.Count);
+                var vt = new Shared.ValuesTracker(_uniqueName);
+				var history = new List<string>(Items.Count);
 				history.AddRange(Items.Cast<string>());
 				vt.AddValue<List<string>>(ValueKey, history);
 				vt.Save();

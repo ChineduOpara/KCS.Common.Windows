@@ -149,9 +149,7 @@
     <Compile Include="Other\AsyncProgressBar\AsyncProgressBarControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Other\ValuesTracker\ValuesTracker.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Other\ValuesTracker.cs" />
     <Compile Include="ListBoxes\KCSCheckedListBox.cs">
       <SubType>Component</SubType>
     </Compile>
