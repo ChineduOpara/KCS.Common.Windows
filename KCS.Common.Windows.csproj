@@ -83,9 +83,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboBoxes\IISWebsiteComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ComboBoxes\CountryComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Extensions.cs" />
     <Compile Include="KCSBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>

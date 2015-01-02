@@ -69,15 +69,22 @@ namespace KCS.Common.Controls
             }
         }
 
+        public virtual void ClearSelection()
+        {
+            var raiseEvent = RaiseSelectedIndexChangedEvent;
+            SelectedIndex = -1;
+            RaiseSelectedIndexChangedEvent = raiseEvent;
+        }
+
 		/// <summary>
 		/// Adjusts the width of the combobox to acommodate the longest string.
 		/// </summary>
 		/// <remarks>
-		/// Right now it handles just a handful of types. We need a way to make it handle bound ALL types.
+		/// Base class handles just a handful of types..
 		/// </remarks>
 		public virtual void ResizeToLongestItem()
 		{
-		    List<string> list = new List<string>(Items.Count);
+		    var list = new List<string>(Items.Count);
 
 		    foreach (object obj in Items)
 		    {
