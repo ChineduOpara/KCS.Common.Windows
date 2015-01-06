@@ -19,6 +19,7 @@ namespace KCS.Common.Controls
 	public class KCSDataGridView : DataGridView
 	{
 		#region Members
+        private DataGridViewRow _currentRow;
 		private string _phantomText;
 
         private int _clickedRow = -1;
@@ -216,6 +217,9 @@ namespace KCS.Common.Controls
 		#region Events
         //[Category("Action"), Description("Occurs when the user begins dragging a row.")]
         //public event ItemDragEventHandler BeginRowDrag;
+
+        [Category("Behavior"), Description("Occurs when the current row cursor changes.")]
+        public event EventHandler CurrentRowChanged;
 
 		/// <summary>
 		/// Raised when a row is clicked.
@@ -1227,6 +1231,20 @@ namespace KCS.Common.Controls
                 }
             }
 		}
+
+        protected override void OnSelectionChanged(EventArgs e)
+        {
+            base.OnSelectionChanged(e);
+
+            if (CurrentRow != _currentRow)
+            {
+                _currentRow = CurrentRow;
+                if (CurrentRowChanged != null)
+                {
+                    CurrentRowChanged(this, e);
+                }
+            }
+        }
 
         /// <summary>
         /// As soon as a cell value is changed, set the row to Modified, so that we don't have to leave that row.
