@@ -139,6 +139,18 @@ namespace KCS.Common.Controls
             return MessageBox.Show(this, message, "Message", buttons, icon);
         }
 
+        /// <summary>
+        /// Shows a non-blocking dialog window.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="icon"></param>
+        /// <param name="buttons"></param>
+        /// <returns></returns>
+        public DialogResult ShowNonModalMessage(string message, MessageBoxIcon icon = MessageBoxIcon.Information, MessageBoxButtons buttons = MessageBoxButtons.OK)
+        {
+            return MessageBox.Show(this, message, "Message", buttons, icon);
+        }
+
         protected virtual void SetBusy(bool busy)
         {
             SetBusy(busy, string.Empty);
