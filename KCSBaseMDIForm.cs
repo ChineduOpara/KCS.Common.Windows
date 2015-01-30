@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace KCS.Common.Controls
@@ -146,9 +147,18 @@ namespace KCS.Common.Controls
         /// <param name="icon"></param>
         /// <param name="buttons"></param>
         /// <returns></returns>
-        public DialogResult ShowNonModalMessage(string message, MessageBoxIcon icon = MessageBoxIcon.Information, MessageBoxButtons buttons = MessageBoxButtons.OK)
+        public void ShowNonModalMessage(string message, MessageBoxIcon icon = MessageBoxIcon.Information)
         {
-            return MessageBox.Show(this, message, "Message", buttons, icon);
+            new Thread(new ThreadStart(delegate
+            {
+                MessageBox.Show
+                (
+                  message,
+                  "Message",
+                  MessageBoxButtons.OK,
+                  icon
+                );
+            })).Start();
         }
 
         protected virtual void SetBusy(bool busy)
