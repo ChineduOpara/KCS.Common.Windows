@@ -45,7 +45,14 @@ namespace KCS.Common.Controls
 
         protected override void SetBusy(bool busy)
         {
-            base.SetBusy(busy);
+            pnlMain.Enabled = !busy;
+            base.SetBusy(busy);            
+        }
+
+        protected override void SetBusy(bool busy, string message)
+        {
+            pnlMain.Enabled = !busy;
+            base.SetBusy(busy, message);            
         }
     }
 }

@@ -175,7 +175,7 @@
     <Compile Include="RichTextBoxes\KCSRichTextBox\KCSRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TextBoxes\KCSTextBox.cs">
+    <Compile Include="TextBoxes\TextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="TextBoxes\NumericTextBox.cs">
